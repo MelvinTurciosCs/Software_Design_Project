@@ -34,9 +34,9 @@
           Sign-in
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Log in</a>
+          <a class="dropdown-item" href="./Login.php">Log in</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Register</a>
+          <a class="dropdown-item" href="./Register.php">Register</a>
         </div>
       </li>
     </ul>
