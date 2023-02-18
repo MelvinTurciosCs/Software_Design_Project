@@ -10,18 +10,18 @@
     <form action="Proposed_quotes.html" method="GET"> 
       <div>
         <!--used to type the gallons requesteds-->
-        <label>Gallons Requested:</label>
-        <input name = "GalReq" type="int" />
+        <label for = "Gal">Gallons Requested:</label>
+        <input name = "GalReq" type="number" id="Gal" placeholder="Number of Gallons" min="1" max="1000"/>
       </div>
       <div>
         <!--Used to type address-->
-        <label>Address:</label>
-        <input name = "Address" type="text" />
+        <label for = "ADDRESS">Address:</label>
+        <input name = "Address" type="text" id="ADDRESS" placeholder="Address"/>
       </div>
       <div>
         <!--used for delivery date-->
-        <label>Delivery Date:</label>
-        <input name = "DELIVDate" type="text" />
+        <label for="DELVDATE">Delivery Date:</label>
+        <input name = "DELIVDate" type="Date"  id="DELVDATE" placeholder="Delivery Date"/>
       </div>
       <div>
         <!--should display the suggested price-->
