@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
 <!-- This is the code for the carousel images in the background -->
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
@@ -20,12 +30,11 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-
-
 <!-- This is the form to create a login page -->
 <form class="login-form" action="login.php" method="post">
   <input type="text" name="username" placeholder="Username">
   <input type="password" name="password" placeholder="Password">
   <input type="submit" name="submit" value="Login">
 </form>
+</body>
+</html>
