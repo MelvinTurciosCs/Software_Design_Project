@@ -141,3 +141,28 @@ input[type=Date]{
     opacity: .7;
     font-weight: 200;
   }
+
+  /* This is the styling for the login page */
+  input[type=text], input[type=password] .loginPassword{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  .submitButton{
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .submitButton:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
