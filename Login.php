@@ -9,7 +9,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="css/style.css">
   <title>Login Page</title>
 </head>
@@ -17,7 +16,7 @@
   <!-- Login Form -->
   <form action="">
     <div class="headingContainer">
-      <h3>Sign in</h3>
+      <h3>Login</h3>
       <p>Sign in to your account with your username and password</p>
     </div>
     <!-- Main container for all inputs -->
@@ -46,12 +45,7 @@
       <!-- Sign up link -->
       <p class="register">Don't have an account? <a href="#">Sign up</a></p>
     </div>
-  </form>
-</body>
-</html>
-</head>
-<body>
-</form>
-</body>
+   </form>
+  </body>
 </html>
 
