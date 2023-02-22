@@ -20,19 +20,25 @@
     <div class="w-50 m-auto">
       <form action="about.php" method="post">
           <div class="form-group">
-              <label>Name:</label>
-              <input type="text" name="name" class="form-control">
+              <label>Username:</label>
+              <input type="text" name="username" class="form-control">
           </div>
           <div class="form-group">
               <label>Email:</label>
-              <input type="email" name="email" class="form-control">
+              <input type="text" name="username" class="form-control">
           </div>
           <div class="form-group">
-              <label>Number:</label>
-              <input type="text" name="number" class="form-control">
+              <label>Password:</label>
+              <input type="password" name="password" class="form-control">
           </div>
-          <button type="submit" class="btn btn-success">Submit</button>
+          <div class="form-group">
+              <label>Confirm Password:</label>
+              <input type="password" name="password" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-success">Register</button>
+          <button type="submit" class="btn btn-success">Already have an account?</button>
       </form>
+
     </div>
 </body>
 
