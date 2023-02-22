@@ -143,7 +143,18 @@ input[type=Date]{
   }
 
   /* This is the styling for the login page */
-  input[type=text], input[type=password] .loginPassword{
+  form{
+    width: 35rem;
+    margin: auto;
+    color: whitesmoke;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(11, 15, 13, 0.582);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+  }
+
+  input[type=text], input[type=password]{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -152,7 +163,7 @@ input[type=Date]{
     box-sizing: border-box;
   }
 
-  .submitButton{
+  .submit_Button{
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -162,7 +173,68 @@ input[type=Date]{
     width: 100%;
   }
 
-  .submitButton:hover {
+  .submit_Button:hover {
     opacity: 0.8;
     cursor: pointer;
+  }
+
+  .headingContainer{
+    text-align: center;
+  }
+
+  .mainContainer{
+    padding: 16px;
+  }
+
+  .subContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .subContainer a{
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  span.forgotpsd a {
+    float: right;
+    color: whitesmoke;
+    padding-top: 16px;
+  }
+
+.forgotpsd a{
+    color: rgb(74, 146, 235);
+  }
+  
+.forgotpsd a:link{
+    text-decoration: none;
+  }
+
+  .register{
+    color: white;
+    text-align: center;
+  }
+  
+  .register a{
+    color: rgb(74, 146, 235);
+  }
+  
+  .register a:link{
+    text-decoration: none;
+  }
+
+  /* These are the media queries for the responsiveness of the login page */
+
+  @media screen and (max-width: 600px) {
+    form {
+      width: 25rem;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    form {
+      width: 20rem;
+    }
   }

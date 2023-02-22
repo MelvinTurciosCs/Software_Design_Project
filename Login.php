@@ -28,14 +28,21 @@
       <label class="loginPassword" for="password">Password: </label>
       <input type="password" name="password" id="password" placeholder="Enter Password" required>
 
+      <!-- Remember me checkbox and Forgot Password Link -->
+      <div class="subContainer">
+        <!-- Remember me checkbox -->
+        <label for="rememberMe">
+          <input type="checkbox" checked="checked" name="rememberMe" id="rememberMe">Remember me
+        </label>
+        <!-- Forgot password link -->
+        <p class="forgotpsd"><a href="#">Forgot password?</a></p>
+      </div>
       <!-- Submit button -->
-      <button class="submitButton type="submit">Login</button> 
+      <button class="submit_Button type="submit">Login</button> 
 
-      <!-- Forgot password link -->
-      <a href="#">Forgot password?</a>
-      
+     
       <!-- Sign up link -->
-      <p>Don't have an account? <a href="#">Sign up</a></p>
+      <p class="register">Don't have an account? <a href="#">Sign up</a></p>
     </div>
   </form>
 </body>
