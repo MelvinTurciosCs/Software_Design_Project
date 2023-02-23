@@ -12,6 +12,8 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="container">
+    
     <!-- Resister Form -->
     <form action="">
         <div class="headingContainer">
@@ -45,10 +47,8 @@
         <!-- Sign up link -->
         <p class="register">Already have an account? <a href="#">Login</a></p>
     </div>
- </form>
-    
-
-    </div>
-</body>
+   </form> 
+  </div>
+ </body>
 </html>
 
