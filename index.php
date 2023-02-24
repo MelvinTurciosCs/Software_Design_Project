@@ -33,7 +33,7 @@
     </div>
 
     <div class="w-50 m-auto">
-      <form action="about.php" method="post">
+      
           <div class="form-group">
               <label>Name:</label>
               <input type="text" name="name" class="form-control">
@@ -47,7 +47,6 @@
               <input type="text" name="number" class="form-control">
           </div>
           <button type="submit" class="btn btn-success">Submit</button>
-      </form>
     </div>
 
 </section>
