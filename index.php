@@ -39,7 +39,7 @@
   <!-- Images with descriptions -->
   <div class="image_div">
     <div class="image_div_child">
-      <img src="images/1.jpg" alt="image1" style="width:75px; height:75px">
+      <img href="https://www.flaticon.com/free-icons/oil-tank" title="oil tank icons" alt="image1" style="width:75px; height:75px">
       <div class="image_div_child_text">
         <p>Image 1</p>
       </div>
@@ -61,7 +61,7 @@
   <!-- Contact Us and Google Image in background-->
   </div>
   <div class="bg_Image">
-  <div class="contact_div">
+    <div class="contact_div">
       <h1 class="contact">Contact Us</h1>
       <div class="officeOne">
         <h3>Head Office</h3>
