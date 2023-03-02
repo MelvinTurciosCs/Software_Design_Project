@@ -18,7 +18,7 @@
 }
 
 .topPage{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../images/pexels-johannes-plenio-3105242.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../images/istockphoto-163911364-612x612.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -29,8 +29,9 @@
 /* This is the styling for the about us section */
 
 .About_Container{
-  background-color: whitesmoke;
+  background-color: #ffeed5;
 }
+
 .About{
   text-align: center;
   font-family: "Open Sans";
@@ -66,7 +67,7 @@
 }
 
 .image_div{
-  background-color: #317d33;
+  background-color: #3c7f3e;
   width: 100%;
   height: 350px;
 }
@@ -81,7 +82,7 @@
 
 .contact_div{
   padding-top: 50px;
-  background-color: whitesmoke;
+  background-color: #e9ca9c;
   width: 468px;
   height: 500px;
   font-family: "Open Sans";
@@ -106,7 +107,7 @@
 
 
 .footer{
-  background-color: #317d33;
+  background-color: #3c7f3e;
   width: 100%;
   height: 250px;
 }
