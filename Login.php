@@ -1,5 +1,9 @@
 
 <?php 
+
+include("dbconnection.php");
+include("funtions.php");
+
   include('includes/header.php');
 ?>
 

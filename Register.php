@@ -13,7 +13,7 @@
 </head>
 <body>
     <!-- Resister Form -->
-    <form action="">
+    <form action="includes/config/register.inc.php" method="post">
         <div class="headingContainer">
             <h3>Sign Up</h3>
             <p>Create an account</p>
@@ -26,20 +26,16 @@
         <label for="username">Username: </label>
         <input type="text" name="username" id="username" placeholder="Enter Username" required>
 
-        <!-- Username input -->
-        <label for="email">Email: </label>
-        <input type="text" name="username" id="email" placeholder="Enter Email" required>
-
         <!-- Password input -->
         <label class="loginPassword" for="password">Password: </label>
         <input type="password" name="password" id="password" placeholder="Enter Password" required>
 
         <!-- Password Confirmation input -->
         <label class="loginPassword" for="confirm_password">Confirm Password: </label>
-        <input type="password" name="password" id="password" placeholder="Confirm Password" required>
+        <input type="password" name="pwdrepeat" id="password" placeholder="Confirm Password" required>
 
         <!-- Create Account button -->
-        <button class="submit_Button " type="submit">Create Account</button> 
+        <button class="submit_Button " type="submit" name="submit">Create Account</button> 
 
      
         <!-- Sign up link -->
