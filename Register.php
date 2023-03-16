@@ -26,9 +26,9 @@
         <label for="username">Username: </label>
         <input type="text" name="username" id="username" placeholder="Enter Username" required>
 
-        <!-- Password input -->
-        <label class="loginPassword" for="password">Password: </label>
-        <input type="password" name="password" id="password" placeholder="Enter Password" required>
+        <!-- password input -->
+        <label >Password: </label>
+        <input type="password" name="pwd" placeholder="Enter Password" required>
 
         <!-- Password Confirmation input -->
         <label class="loginPassword" for="confirm_password">Confirm Password: </label>
