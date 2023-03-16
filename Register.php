@@ -2,16 +2,8 @@
   include('includes/header.php');
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
-</head>
-<body>
+
+<section>
     <!-- Resister Form -->
     <form action="includes/config/register.inc.php" method="post">
         <div class="headingContainer">
@@ -43,8 +35,33 @@
     </div>
  </form>
     
+ <?php 
 
-    </div>
-</body>
-</html>
+  if (isset($_GET["error"])){
+    if ($_GET["error"] == "emptyinput"){
+      echo "<p>Fill in all fields!</p>"
+    }
+    else if ($_GET["error"] == "invaliduid") {
+      echo "<p>Choose a proper username!</p>"
+    }
+    else if ($_GET["error"] == "passwordnotmatch") {
+      echo "<p>Password does not match!</p>"
+    }
+    else if ($_GET["error"] == "usernametaken") {
+      echo "<p>Username already taken!</p>"
+    }
+    else if ($_GET["error"] == "stmtfailed") {
+      echo "<p>Something wrong, try again!</p>"
+    }
+    else if ($_GET["error"] == "none") {
+      echo "<p>Succesfully signed up!</p>"
+    }
+
+  }
+
+
+
+
+  include('includes/footer.php');
+?>
 

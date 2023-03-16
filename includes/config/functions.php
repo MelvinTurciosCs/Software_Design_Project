@@ -1,5 +1,8 @@
 <?php
 
+
+
+//functions for the registration page-------------------------------------------
 function emptyInputSignup($username, $password, $pwdrepeat){
     $result;
     if (empty($username) || empty($password) || empty($pwdrepeat)){
@@ -92,7 +95,30 @@ function createUser($con, $username, $password){
 }
 
 
+//functions for login page----------------------------------------------
+function emptyInputLogin($username, $password){
+    $result;
+    if (empty($username) || empty($password)){
+        $result = true;
+    }
+    else 
+    {
+        $result = false;
+    }
+    return $result;
+}
 
+function loginUser($con, $username, $password){
+
+    //will either return false or the actual user name
+    $uidExists = uidExists($con, $username);
+
+    if($uidExists === false){
+        header("location: ../../Login.php?error=wronglogin");
+        exit();       
+    }
+
+}
 
 
 ?>
