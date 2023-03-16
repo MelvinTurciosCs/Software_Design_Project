@@ -13,6 +13,7 @@
   <title>Login Page</title>
 </head>
 <body>
+  <div class="container">
   <!-- Login Form -->
   <form action="">
     <div class="headingContainer">
@@ -46,6 +47,7 @@
       <p class="register">Don't have an account? <a href="#">Sign up</a></p>
     </div>
    </form>
-  </body>
+  </div>
+ </body>
 </html>
 
