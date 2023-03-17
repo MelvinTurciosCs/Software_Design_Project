@@ -120,5 +120,23 @@ function loginUser($con, $username, $password){
 
 }
 
+//gets the hashed password and stores it
+$pwdHashed = $uidExists["password"];
+
+//variable to hold bool for password verified
+$checkPwd = password_verify($password, $pwdHashed);
+
+if ($checkPwd === false) {
+    header("location: ../../Login.php?error=wronglogin");
+    exit();
+}
+else if($checkPwd === true){
+    session_start();
+    $_SESSION["userid"] = $uidExists["username"];
+    header("location: ../../customerPage.php?");
+    exit();
+}
+
+
 
 ?>

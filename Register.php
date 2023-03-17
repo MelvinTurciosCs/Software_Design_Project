@@ -39,22 +39,22 @@
 
   if (isset($_GET["error"])){
     if ($_GET["error"] == "emptyinput"){
-      echo "<p>Fill in all fields!</p>"
+      echo "<p>Fill in all fields!</p>";
     }
     else if ($_GET["error"] == "invaliduid") {
-      echo "<p>Choose a proper username!</p>"
+      echo "<p>Choose a proper username!</p>";
     }
     else if ($_GET["error"] == "passwordnotmatch") {
-      echo "<p>Password does not match!</p>"
+      echo "<p>Password does not match!</p>";
     }
     else if ($_GET["error"] == "usernametaken") {
-      echo "<p>Username already taken!</p>"
+      echo "<p>Username already taken!</p>";
     }
     else if ($_GET["error"] == "stmtfailed") {
-      echo "<p>Something wrong, try again!</p>"
+      echo "<p>Something wrong, try again!</p>";
     }
     else if ($_GET["error"] == "none") {
-      echo "<p>Succesfully signed up!</p>"
+      echo "<p>Succesfully signed up!</p>";
     }
 
   }
