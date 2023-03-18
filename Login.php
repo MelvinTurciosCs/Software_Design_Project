@@ -39,6 +39,8 @@
     </div>
    </form>
 
+   <br>
+
    <?php 
 
 if (isset($_GET["error"])){
@@ -53,7 +55,6 @@ if (isset($_GET["error"])){
 }
 
 
-  include('includes/footer.php');
 ?>
 
 

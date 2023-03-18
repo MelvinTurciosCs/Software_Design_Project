@@ -10,7 +10,7 @@ if (isset($_POST["submit"])) {
     $password = $_POST["password"];
     
     //function to check if user left empty fields
-    if(emptyInputSignup($username, $password) !== false){
+    if(emptyInputLogin($username, $password) !== false){
         header("location: ../../Login.php?error=emptyinput");
         exit();
     }

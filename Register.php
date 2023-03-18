@@ -1,7 +1,7 @@
 <?php 
   include('includes/header.php');
 ?>
-
+<br>
 
 <section>
     <!-- Resister Form -->
@@ -35,6 +35,7 @@
     </div>
  </form>
     
+ <br>
  <?php 
 
   if (isset($_GET["error"])){
@@ -62,6 +63,6 @@
 
 
 
-  include('includes/footer.php');
+
 ?>
 

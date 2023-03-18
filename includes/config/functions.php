@@ -109,34 +109,35 @@ function emptyInputLogin($username, $password){
 }
 
 function loginUser($con, $username, $password){
-
-    //will either return false or the actual user name
-    $uidExists = uidExists($con, $username);
-
-    if($uidExists === false){
+//will either return false or the actual user name
+$uidExists = uidExists($con, $username);
+if($uidExists === false){
+        echo "user does not exist";
         header("location: ../../Login.php?error=wronglogin");
         exit();       
     }
 
-}
+
 
 //gets the hashed password and stores it
 $pwdHashed = $uidExists["password"];
-
+echo $pwdHashed." ";
 //variable to hold bool for password verified
+echo password_verify($password, $pwdHashed);
 $checkPwd = password_verify($password, $pwdHashed);
-
+echo $checkPwd;
 if ($checkPwd === false) {
+    
     header("location: ../../Login.php?error=wronglogin");
     exit();
 }
 else if($checkPwd === true){
     session_start();
-    $_SESSION["userid"] = $uidExists["username"];
+    $_SESSION["useruid"] = $uidExists["username"];
     header("location: ../../customerPage.php?");
     exit();
 }
 
-
+}
 
 ?>

@@ -1,9 +1,5 @@
 <?php
 
-//this is to establish connection to database
-session_start();
-require_once "..includes/config/dbconnection.php";
-
 //this includes the header
 include('includes/header.php');
 ?>
