@@ -65,14 +65,6 @@
   </div>
 
   <!-- Footer -->
-  <div class="footer">
-    <div class="footer_child">
-      <a href="#" class="fa fa-facebook"></a>
-      <a href="#" class="fa fa-twitter"></a>
-      <a href="#" class="fa fa-instagram"></a>
-      <a href="#" class="fa fa-linkedin"></a>
-      <h3>Follow Us</h3>
-    </div>
-    <p class="copyright" >Apex Fuel Company 2023 All Rights Reserved</p>
-</body>
-</html>
+  <?php
+    include('includes/footer.php');
+?>

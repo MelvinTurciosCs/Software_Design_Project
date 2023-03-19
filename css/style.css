@@ -19,7 +19,7 @@
 
 /*Navbar color */
 .navbar-custom{
-  background-color: coral;
+  background-color: #E1856C;
 }
 .topPage{
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../images/istockphoto-163911364-612x612.jpg");
@@ -249,15 +249,14 @@
 
 
   /*This is the footer edits */
+  body{
+    min-height: 100vh;
+  }
 
   footer{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: coral;
-    height: auto;
-    width: 100vw;
+    position: sticky;
+    background: #E1856C;
+    top: 100%;
     font-family: "Open Sans";
     padding-top: 10px;
     color: white;
@@ -309,7 +308,7 @@
   }
 
   .footer-bottom{
-    background: coral;
+    background: #E1856C;
     width: 100vw;
     padding:1px 0;
     text-align: center;
