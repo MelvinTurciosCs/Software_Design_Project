@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2023 at 01:03 AM
+-- Generation Time: Mar 19, 2023 at 11:11 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `client` (
   `client_ID` int(11) NOT NULL,
   `username` varchar(16) DEFAULT NULL,
-  `password` int(16) DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
   `name` varchar(50) DEFAULT NULL,
   `address_1` varchar(100) DEFAULT NULL,
   `address_2` varchar(100) DEFAULT NULL,
@@ -46,9 +46,8 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`client_ID`, `username`, `password`, `name`, `address_1`, `address_2`, `city`, `state`, `zipcode`, `email`, `cpm`) VALUES
-(0, 'alice123', 11111111, 'alice volto', '123 apple drive', '124 pineapple drive', 'Houston', 'TX', 77000, 'alice54@yahoo.com', 10),
-(1, 'marco444', 22222222, 'Marco', '444 Audie Drive', '423 Autica St', 'Houston', 'TX', 77000, 'Marco54@yahoo.com', 20),
-(2, 'felix', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(0, 'alice123', '11111111', 'alice volto', '123 apple drive', '124 pineapple drive', 'Houston', 'TX', 77000, 'alice54@yahoo.com', 10),
+(8, 'hello', '$2y$10$VynujjA/jU9.KHxyH4mKwOBpFF5e/GNV6lDMm0p1NoEefXN0wh97O', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -96,7 +95,7 @@ ALTER TABLE `order_history`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `client_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `client_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `order_history`
