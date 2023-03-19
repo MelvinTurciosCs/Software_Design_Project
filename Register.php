@@ -45,7 +45,7 @@
 
      
         <!-- Sign up link -->
-        <p class="register">Already have an account? <a href="#">Login</a></p>
+        <p class="register">Already have an account? <a href="./Login.php">Login</a></p>
     </div>
    </form> 
   </div>

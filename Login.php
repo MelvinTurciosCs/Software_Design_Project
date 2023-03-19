@@ -35,7 +35,7 @@
 
      
       <!-- Sign up link -->
-      <p class="register">Don't have an account? <a href="#">Sign up</a></p>
+      <p class="register">Don't have an account? <a href="./Register.php">Sign up</a></p>
     </div>
    </form>
 
