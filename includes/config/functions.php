@@ -121,21 +121,46 @@ if($uidExists === false){
 
 //gets the hashed password and stores it
 $pwdHashed = $uidExists["password"];
-echo $pwdHashed." ";
 //variable to hold bool for password verified
-echo password_verify($password, $pwdHashed);
 $checkPwd = password_verify($password, $pwdHashed);
-echo $checkPwd;
+
+//the sql query needed to fetch the specific row 
+$sql = "SELECT * FROM client WHERE username = ?";
+//prepared statement
+$stmt = $con->prepare($sql);
+//binds the statement
+$stmt->bind_param("s", $username);
+//query finally executes
+$stmt->execute();
+//get the mysqil result
+$result = $stmt->get_result();
+//fetching a row
+$row = $result->fetch_assoc();
+
+
+
 if ($checkPwd === false) {
     
     header("location: ../../Login.php?error=wronglogin");
     exit();
 }
 else if($checkPwd === true){
+
     session_start();
-    $_SESSION["useruid"] = $uidExists["username"];
-    header("location: ../../customerPage.php?");
-    exit();
+    //Stores the client ID for the session
+    $_SESSION["useruid"] = $uidExists["client_ID"];
+    if(is_null($row['name']))
+    {
+        header("location: ../../profileManagement.php?");
+        exit();
+    }
+    else
+    {
+
+        header("location: ../../index.php?");
+        exit();
+    }
+
 }
 
 }
