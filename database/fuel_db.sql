@@ -58,8 +58,9 @@ INSERT INTO `client` (`client_ID`, `username`, `password`, `name`, `address_1`, 
 CREATE TABLE `order_history` (
   `order_ID` int(11) NOT NULL,
   `total_price` float DEFAULT NULL,
-  `client_name` varchar(45) NOT NULL,
+  `client_ID` varchar(45) NOT NULL, --changed
   `delv_date` date DEFAULT NULL,
+  `delv_adress` date DEFAULT NULL, --added 
   `ccpm` float DEFAULT NULL,
   `request_Gals` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -68,8 +69,8 @@ CREATE TABLE `order_history` (
 -- Dumping data for table `order_history`
 --
 
-INSERT INTO `order_history` (`order_ID`, `total_price`, `client_name`, `delv_date`, `ccpm`, `request_Gals`) VALUES
-(1, 20022, 'marco', '2023-04-12', 40, 100);
+INSERT INTO `order_history` (`order_ID`, `total_price`, `client_ID`, 'delv_date', 'delv_adress', `ccpm`, `request_Gals`) VALUES
+(1, 20022, '0', '2023-04-12', '123 Houston Street Road', 40, 100);
 
 --
 -- Indexes for dumped tables
