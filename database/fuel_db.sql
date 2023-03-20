@@ -67,8 +67,9 @@ CREATE TABLE `order_history` (
   FOREIGN KEY (client_id) REFERENCES client(client_ID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO `order_history` (`order_ID`, `total_price`, `client_id`, 'delv_date', 'delv_adress', `ccpm`, `request_Gals`) VALUES
+INSERT INTO `order_history` (`order_ID`, `total_price`, `client_id`, `delv_date`, `delv_adress`, `ccpm`, `request_Gals`) VALUES
 (1, 20022, '0', '2023-04-12', '123 Houston Street Road', 40, 100);
+
 
 
 ALTER TABLE `client`
