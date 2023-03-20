@@ -2,34 +2,39 @@
 <?php 
   include('includes/header.php');
 ?>
-
-
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
 <div class="py-4">
       <h2 class="text-center">Update Info</h2>
     </div>
 
     <div class="w-50 m-auto">
-      <form action="includes/config/profileMan.php" method="post">
+      <form action="about.php" method="post">
           <div class="form-group">
               <label>Company Profit Margin:</label>
-              <input type="text" name="cpm" class="form-control">
+              <input type="text" name="username" class="form-control">
           </div>
           <div class="form-group">
               <label>Full Name:</label>
-              <input type="text" name="name" class="form-control">
+              <input type="text" name="text" class="form-control">
           </div>
           <div class="form-group">
               <label>Address 1:</label>
-              <input type="text" name="address_1" class="form-control">
+              <input type="text" name="username" class="form-control">
           </div>
           <div class="form-group">
               <label>Address 2:</label>
-              <input type="text" name="address_2" class="form-control">
+              <input type="text" name="text" class="form-control">
           </div>
           <div class="form-group">
               <label>City:</label>
-              <input type="text" name="City" class="form-control">
+              <input type="text" name="text" class="form-control">
           </div>
           <div class="form-group">
               <label>State:</label>
@@ -42,14 +47,11 @@
           </div>
           <div class="form-group">
               <label>Zip Code:</label>
-              <input type="text" name="zipcode" class="form-control">
+              <input type="text" name="text" class="form-control">
           </div>
-          <button type="submit" name = "submit" class="btn btn-success">Update Info</button>
+          <button type="submit" class="btn btn-success">Update Info</button>
       </form>
 
     </div>
-
-
-<?php 
-  include('includes/footer.php');
-?>
+</body>
+</html>
