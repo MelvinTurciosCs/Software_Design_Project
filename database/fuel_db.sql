@@ -43,9 +43,6 @@ CREATE TABLE `client` (
   PRIMARY KEY (client_ID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `client`
---
 
 INSERT INTO `client` (`client_ID`, `username`, `password`, `name`, `address_1`, `address_2`, `city`, `state`, `zipcode`, `email`, `cpm`) VALUES
 (0, 'alice123', '11111111', 'alice volto', '123 apple drive', '124 pineapple drive', 'Houston', 'TX', 77000, 'alice54@yahoo.com', 10),
@@ -70,32 +67,13 @@ CREATE TABLE `order_history` (
   FOREIGN KEY (client_id) REFERENCES client(client_ID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `order_history`
---
-
 INSERT INTO `order_history` (`order_ID`, `total_price`, `client_id`, 'delv_date', 'delv_adress', `ccpm`, `request_Gals`) VALUES
 (1, 20022, '0', '2023-04-12', '123 Houston Street Road', 40, 100);
 
---
--- Indexes for dumped tables
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `client`
---
 ALTER TABLE `client`
   MODIFY `client_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
---
--- AUTO_INCREMENT for table `order_history`
---
 ALTER TABLE `order_history`
   MODIFY `order_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
