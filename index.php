@@ -1,23 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Document</title>
-</head>
-<body>
-  <!-- Top of Page with navigation bar -->
-  <div class="topPage" >
-    <a class="active" href="#home">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
-    <button class="button">Login</button>
-    <button class="button">Sign Up</button>
-  </div>
+<?php
+    include('includes/header.php');
+?>
 
   <!-- About Us Information: History, Mission, Core Values -->
   <div class="About_Container">
@@ -82,14 +65,6 @@
   </div>
 
   <!-- Footer -->
-  <div class="footer">
-    <div class="footer_child">
-      <a href="#" class="fa fa-facebook"></a>
-      <a href="#" class="fa fa-twitter"></a>
-      <a href="#" class="fa fa-instagram"></a>
-      <a href="#" class="fa fa-linkedin"></a>
-      <h3>Follow Us</h3>
-    </div>
-    <p class="copyright" >Apex Fuel Company 2023 All Rights Reserved</p>
-</body>
-</html>
+  <?php
+    include('includes/footer.php');
+?>

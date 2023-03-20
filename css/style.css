@@ -17,6 +17,10 @@
     flex-direction: column;
 }
 
+/*Navbar color */
+.navbar-custom{
+  background-color: #E1856C;
+}
 .topPage{
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../images/istockphoto-163911364-612x612.jpg");
   background-repeat: no-repeat;
@@ -144,11 +148,11 @@
 }
 
 .fa-facebook {
-  color: #404040;
+  color: white;
 }
 
 .fa-twitter {
-  color: #404040;
+  color: white;
 }
 
 .fa-linkedin {
@@ -180,6 +184,24 @@
 
 }
 
+/*Styling for the fuel quote form */
+
+.request_form{
+  min-height: 100vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.container{
+  position:relative;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 0 15px;
+  background-color: beige;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
 
 /*css fpr address input */
 .Addy{
@@ -227,17 +249,16 @@
 
 
   /*This is the footer edits */
+  body{
+    min-height: 100vh;
+  }
 
   footer{
-    position: relative;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background:#4CAF50;
-    height: auto;
-    width: 100vw;
+    position: sticky;
+    background: #E1856C;
+    top: 100%;
     font-family: "Open Sans";
-    padding-top: 40px;
+    padding-top: 10px;
     color: white;
   }
 
@@ -253,7 +274,7 @@
     font-size: 1.8rem;
     font-weight: 400;
     text-transform: capitalize;
-    line-height: 3rem;
+    line-height: 1rem;
   }
 
   .footer-content p{
@@ -268,7 +289,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1rem 0 3rem 0;
+  
   }
 
   .socials li{
@@ -287,9 +308,9 @@
   }
 
   .footer-bottom{
-    background: #4CAF50;
+    background: #E1856C;
     width: 100vw;
-    padding:20px 0;
+    padding:1px 0;
     text-align: center;
   }
 
