@@ -2,28 +2,31 @@
   include('includes/header.php');
 ?>
 
-  <h1 style = "text-align: center;" >Fuel Up Quote History</h1>
-  <div style="text-align: center;">
-  <table border = 1 style="margin: 0 auto;">
-    <tr>
-      <th>Gallons Requested</th>
-      <th>Delivery Address</th>
-      <th>Delivery Date</th>
-      <th>Suggested Price / Gallon</th>
-      <th>Total Amount Due</th>
-    </tr>
-    <tr>
-      <td input type="int" name="gallons_requested" required>5000</td>
-      <td input type="text" name="delivery_address" required>2245 Road Roundabout Av</td>
-      <td input type="date" name="delivery_date" required>02/20/2023</td>
-      <td input type="int" name="suggested_price" required>$6.00</td>
-      <td input type="int" name="total_price" required>$20200.00</td>
-    </tr>
-  </table>
-</div>
+<?php
+  $
+  $query = $mysqli->query("SELECT 'request_Gals', 'delv_adress', 'delv_date', 'ccpm', 'total_price'  FROM order_history");
+  $sql = "SELECT 'request_Gals', 'delv_adress', 'delv_date', 'ccpm', 'total_price'  FROM order_history";
 
+  if ($result = $mysqli->query($query)) {
 
+    /* fetch associative array */
+    while ($row = $result->fetch_assoc()) {
+        $field1name = $row["col1"];
+        $field2name = $row["col2"];
+        $field3name = $row["col3"];
+        $field4name = $row["col4"];
+        $field5name = $row["col5"];
 
+        echo '<b>'.$field1name.$field2name.'</b><br />';
+        echo $field5name.'<br />';
+        echo $field5name.'<br />';
+        echo $field5name;
+    }
+
+    /* free result set */
+    $result->free();
+  }
+?>
 
 <?php 
   include('includes/footer.php');
