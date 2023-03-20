@@ -4,10 +4,175 @@
     box-sizing: border-box;
 }
 
-.carousel-item img{
-    width: 20%;
-    height: 80vh;
+/* This is the styling for the landing page*/
+.landingpage{
+    background-image: url("../images/landingpage.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
+
+/*Navbar color */
+.navbar-custom{
+  background-color: #E1856C;
+}
+.topPage{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../images/istockphoto-163911364-612x612.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+}
+
+/* This is the styling for the about us section */
+
+.About_Container{
+  background-color: #ffeed5;
+}
+
+.About{
+  color: #404040;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 50px;
+}
+
+.ourHistory{
+  color: #404040;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    font-size: 24px;
+    font-family: "Open Sans";
+}
+
+.historyParagraph{
+  color: #404040;
+  text-align: center;
+  padding-left: 300px;
+  padding-right: 300px;
+  font-size: 24px;
+  font-family: "Open Sans";
+}
+
+.childContainer {
+  color: #404040;
+  display: flex;
+  font-family: "Open Sans";
+  font-size: 24px;
+}
+
+.flex-child {
+  flex: 1;
+}
+
+.flex-child:first-child {
+  margin-right: 20px;
+}
+
+.image_div{
+  background-color: #E1856C;
+  width: 100%;
+  height: 350px;
+}
+
+.bg_Image{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url("../images/UH_Google_Maps.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+}
+
+.contact_div{
+  padding-top: 50px;
+  background-color: #E8E5D2;
+  width: 468px;
+  height: 500px;
+  font-family: "Open Sans";
+}
+
+.contact {
+  color: #404040;
+  text-align: center;
+  font-size: 45px;
+}
+
+.officeOne{
+  color: #404040;
+  padding-top: 25px;
+  padding-left: 30px;
+  font-weight: bolder;
+}
+
+.officeTwo{
+  color: #404040;
+  padding-top: 25px;
+  padding-left: 30px;
+  font-weight: bolder;
+}
+
+
+.footer{
+  background-color: #E1856C;
+  width: 100%;
+  height: 250px;
+}
+
+.footer_child{
+  color: #404040;
+  text-align: center;
+  padding-top: 50px;
+  font-family: "Open Sans";
+  font-size: 24px;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 7px 5px;
+  border-radius: 60%;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  color: white;
+}
+
+.fa-twitter {
+  color: white;
+}
+
+.fa-linkedin {
+  color: #404040;
+}
+
+.fa-instagram {
+  color: #404040;
+}
+
+.copyright{
+  color: #404040;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Open Sans";
+}
+/* This is the end for the styling of the landing page */
 
 /*Styling for the fuel quote form */
 .fuel_QForm{
@@ -19,6 +184,24 @@
 
 }
 
+/*Styling for the fuel quote form */
+
+.request_form{
+  min-height: 100vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.container{
+  position:relative;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 0 15px;
+  background-color: beige;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
 
 /*css fpr address input */
 .Addy{
@@ -66,17 +249,16 @@
 
 
   /*This is the footer edits */
+  body{
+    min-height: 100vh;
+  }
 
   footer{
-    position: relative;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background:#4CAF50;
-    height: auto;
-    width: 100vw;
+    position: sticky;
+    background: #E1856C;
+    top: 100%;
     font-family: "Open Sans";
-    padding-top: 40px;
+    padding-top: 10px;
     color: white;
   }
 
@@ -92,7 +274,7 @@
     font-size: 1.8rem;
     font-weight: 400;
     text-transform: capitalize;
-    line-height: 3rem;
+    line-height: 1rem;
   }
 
   .footer-content p{
@@ -107,7 +289,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1rem 0 3rem 0;
+  
   }
 
   .socials li{
@@ -126,9 +308,9 @@
   }
 
   .footer-bottom{
-    background: #4CAF50;
+    background: #E1856C;
     width: 100vw;
-    padding:20px 0;
+    padding:1px 0;
     text-align: center;
   }
 
@@ -145,7 +327,10 @@
   }
 
 
-  /* This is the styling for the login page */
+  /* This is the styling for the login and registration pages */
+  .container{
+    padding-top: 150px;
+  }
   form{
     width: 35rem;
     margin: auto;

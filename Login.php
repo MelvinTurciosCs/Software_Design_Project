@@ -3,21 +3,12 @@
   include('includes/header.php');
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<br>
 
-  <link rel="stylesheet" href="css/style.css">
-  <title>Login Page</title>
-</head>
-<body>
   <!-- Login Form -->
-  <form action="">
+  <form action="includes/config/login.inc.php" method="post">
     <div class="headingContainer">
-      <h3>Sign in</h3>
+      <h3>Login</h3>
       <p>Sign in to your account with your username and password</p>
     </div>
     <!-- Main container for all inputs -->
@@ -40,18 +31,30 @@
         <p class="forgotpsd"><a href="#">Forgot password?</a></p>
       </div>
       <!-- Submit button -->
-      <button class="submit_Button type="submit">Login</button> 
+      <button class="submit_Button" name = "submit" type="submit">Login</button> 
 
      
       <!-- Sign up link -->
-      <p class="register">Don't have an account? <a href="#">Sign up</a></p>
+      <p class="register">Don't have an account? <a href="./Register.php">Sign up</a></p>
     </div>
-  </form>
-</body>
-</html>
-</head>
-<body>
-</form>
-</body>
-</html>
+   </form>
+
+   <br>
+
+   <?php 
+
+if (isset($_GET["error"])){
+  if ($_GET["error"] == "emptyinput"){
+    echo "<p>Fill in all fields!</p>";
+  }
+  else if ($_GET["error"] == "wronglogin") {
+    echo "<p>Incorrect login info!</p>";
+  }
+  
+
+}
+
+
+?>
+
 
