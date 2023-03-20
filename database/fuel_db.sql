@@ -38,7 +38,9 @@ CREATE TABLE `client` (
   `state` varchar(2) DEFAULT NULL,
   `zipcode` int(9) DEFAULT NULL,
   `email` varchar(25) DEFAULT NULL,
-  `cpm` float DEFAULT NULL
+  `cpm` float DEFAULT NULL,
+
+  PRIMARY KEY (client_ID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -77,15 +79,6 @@ INSERT INTO `order_history` (`order_ID`, `total_price`, `client_id`, 'delv_date'
 
 --
 -- Indexes for dumped tables
---
-
---
--- Indexes for table `client`
---
-ALTER TABLE `client`
-  ADD PRIMARY KEY (`client_ID`);
-
---
 --
 -- AUTO_INCREMENT for dumped tables
 --
