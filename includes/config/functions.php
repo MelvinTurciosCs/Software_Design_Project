@@ -165,4 +165,6 @@ else if($checkPwd === true){
 
 }
 
+// Create the function for code for updating the password
+
 ?>
