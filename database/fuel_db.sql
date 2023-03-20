@@ -60,9 +60,9 @@ INSERT INTO `client` (`client_ID`, `username`, `password`, `name`, `address_1`, 
 CREATE TABLE `order_history` (
   `order_ID` int(11) NOT NULL,
   `total_price` float DEFAULT NULL,
-  `client_id` varchar(45) NOT NULL, --changed
+  `client_id` varchar(45) NOT NULL, 
   `delv_date` date DEFAULT NULL,
-  `delv_adress` date DEFAULT NULL, --added 
+  `delv_adress` date DEFAULT NULL,
   `ccpm` float DEFAULT NULL,
   `request_Gals` int(10) DEFAULT NULL,
   
