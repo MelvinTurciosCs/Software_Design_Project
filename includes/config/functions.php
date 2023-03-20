@@ -1,7 +1,5 @@
 <?php
 
-
-
 //functions for the registration page-------------------------------------------
 function emptyInputSignup($username, $password, $pwdrepeat){
     $result;

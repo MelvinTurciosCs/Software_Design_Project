@@ -5,7 +5,12 @@
 <?php
 
   //access the dbconnection and functions php
-  require_once 'dbconnection.php';
+  require_once './includes/config/dbconnection.php';
+
+  //declare the session variable to fetch specific data
+  $user_id = $_SESSION["useruid"];
+
+  
   
   $query = $mysqli->query("SELECT 'request_Gals', 'delv_Address', 'delv_date', 'ccpm', 'total_price', 'suggested_Price' FROM order_history");
   $sql = "SELECT 'request_Gals', 'delv_adress', 'delv_date', 'ccpm', 'total_price'  FROM order_history";
