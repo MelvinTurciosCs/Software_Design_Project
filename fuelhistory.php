@@ -3,7 +3,7 @@
 ?>
 
 <?php
-  $
+
   $query = $mysqli->query("SELECT 'request_Gals', 'delv_adress', 'delv_date', 'ccpm', 'total_price'  FROM order_history");
   $sql = "SELECT 'request_Gals', 'delv_adress', 'delv_date', 'ccpm', 'total_price'  FROM order_history";
 
