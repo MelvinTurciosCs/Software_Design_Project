@@ -7,34 +7,44 @@
   //access the dbconnection and functions php
   require_once './includes/config/dbconnection.php';
 
-  //declare the session variable to fetch specific data
+  //declare the session variable to fetch specific data, place on where user_id = #user_id
   $user_id = $_SESSION["useruid"];
 
   
-  
-  $query = $mysqli->query("SELECT 'request_Gals', 'delv_Address', 'delv_date', 'ccpm', 'total_price', 'suggested_Price' FROM order_history");
-  $sql = "SELECT 'request_Gals', 'delv_adress', 'delv_date', 'ccpm', 'total_price'  FROM order_history";
+  //delete stuff below
+  $sql = "SELECT request_Gals, delv_Adress, delv_date, suggested_price, total_price FROM order_history WHERE user_ID = $user_id";
+  $result = mysqli_query($conn, $sql);
 
-  if ($result = $mysqli->query($query)) {
-
-    /* fetch associative array */
-    while ($row = $result->fetch_assoc()) {
-        $field1name = $row["col1"];
-        $field2name = $row["col2"];
-        $field3name = $row["col3"];
-        $field4name = $row["col4"];
-        $field5name = $row["col5"];
-
-        echo '<b>'.$field1name.$field2name.'</b><br />';
-        echo $field5name.'<br />';
-        echo $field5name.'<br />';
-        echo $field5name;
-    }
-
-    /* free result set */
-    $result->free();
+  if (mysqli_num_rows($result) > 0) {
+      // output data of each row
+      while($row = mysqli_fetch_assoc($result)) {
+          echo "<tr><td>" . $row["request_Gals"]. "</td><td>" . $row["delv_Adress"]. "</td><td>" . $row["delv_date"]. "</td><td>" . $row["suggested_price"]. "</td><td>" . $row["total_price"]. "</td></tr>";
+      }
+  } else {
+      echo "0 results";
   }
+
+  mysqli_close($conn);
 ?>
+
+<html>
+<head>
+    <title>Order History</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Gallons Requested</th>
+            <th>Delivery Address</th>
+            <th>Delivery Date</th>
+            <th>Suggested Price</th>
+            <th>Total Price</th>
+        </tr>
+        <?php include 'retrieve_data.php'; ?>
+    </table>
+</body>
+</html>
+
 
 <?php 
   include('includes/footer.php');
