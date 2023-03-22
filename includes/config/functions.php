@@ -178,60 +178,60 @@ function emptyInputGallons($gallons){
     return $result;
 }
 
-//function that calculates gallons
-function fuelCalc($con, $gallons){
-    //call users information
-    session_start(); //This is used to access the global variable for userid
+// function that calculates gallons
+// function fuelCalc($con, $gallons){
+//     //call users information
+//     session_start(); //This is used to access the global variable for userid
     
-    //the sql query needed to fetch the specific row 
-    $sql = "SELECT * FROM client WHERE client_ID = ?";
-    //prepared statement
-    $stmt = $con->prepare($sql);
-    //binds the statement
-    $stmt->bind_param("s", $_SESSION["useruid"]);
-    //query finally executes
-    $stmt->execute();
-    //get the mysqil result
-    $result = $stmt->get_result();
-    //fetching a row
-    $row = $result->fetch_assoc();
+//     //the sql query needed to fetch the specific row 
+//     $sql = "SELECT * FROM client WHERE client_ID = ?";
+//     //prepared statement
+//     $stmt = $con->prepare($sql);
+//     //binds the statement
+//     $stmt->bind_param("s", $_SESSION["useruid"]);
+//     //query finally executes
+//     $stmt->execute();
+//     //get the mysqil result
+//     $result = $stmt->get_result();
+//     //fetching a row
+//     $row = $result->fetch_assoc();
     
-    $sql2 = "SELECT * FROM order_history WHERE user_ID = ?";
-    //prepared statement
-    $stmt2 = $con->prepare($sql2); 
-    //binds the statement
-    $stmt2->bind_param("s", $_SESSION["useruid"]);
-    //query finally executes
-    $stmt2->execute();
-    //get the mysqil result
-    $result2 = $stmt2->get_result();
+//     $sql2 = "SELECT * FROM order_history WHERE user_ID = ?";
+//     //prepared statement
+//     $stmt2 = $con->prepare($sql2); 
+//     //binds the statement
+//     $stmt2->bind_param("s", $_SESSION["useruid"]);
+//     //query finally executes
+//     $stmt2->execute();
+//     //get the mysqil result
+//     $result2 = $stmt2->get_result();
 
-    $usercpm = $row["cpm"]/100;
-    //check if within texas
-    if($row["state"] == "TX"){
-        $userlocation = .2; //need to change later to get location
-    }
-    else{
-        $userlocation = .4;
-    }
-    //check for previous history
-    if($result2->num_rows > 0){
-        $userhistory = .1;
-    }
-    else{
-        $userhistory = 0;
-    }
-    //calculate final margin
-    if($gallons > 1000){
-        $usermargin = (.02 + $usercpm + $userlocation - $userhistory);
-    }
-    else{
-        $usermargin = (.02 + $usercpm + $userlocation - $userhistory);
-    }
-    //calculate final price
-    $userprice = $usermargin * $gallons;
-    return $userprice;
-}
+//     $usercpm = $row["cpm"]/100;
+//     //check if within texas
+//     if($row["state"] == "TX"){
+//         $userlocation = .2; //need to change later to get location
+//     }
+//     else{
+//         $userlocation = .4;
+//     }
+//     //check for previous history
+//     if($result2->num_rows > 0){
+//         $userhistory = .1;
+//     }
+//     else{
+//         $userhistory = 0;
+//     }
+//     //calculate final margin
+//     if($gallons > 1000){
+//         $usermargin = (.02 + $usercpm + $userlocation - $userhistory);
+//     }
+//     else{
+//         $usermargin = (.02 + $usercpm + $userlocation - $userhistory);
+//     }
+//     //calculate final price
+//     $userprice = $usermargin * $gallons;
+//     return $userprice;
+// }
 //function that updates fuel history with new order
 function placeOrder($con){
 
