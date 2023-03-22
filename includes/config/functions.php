@@ -165,6 +165,30 @@ else if($checkPwd === true){
 
 }
 
-// Create the function for code for updating the password
+// Create the function for code for updating the user profile information
+function update_Profile_Info($con, $name, $email, $address_1, $address_2, $city, $state, $zipcode, $user_id){
+   //the question mark prevents injections
+    $sql = "UPDATE client SET name = ?, email = ?, address_1 = ?, address_2 = ?, city = ?, state = ?, zipcode = ? WHERE client_ID = ?; ";
 
+    //prepared statement
+    $stmt = mysqli_stmt_init($con);
+
+    //checker to see if either fail
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../../profileManagement.php?error=stmtfailed");
+        exit();
+    }
+
+    //binds statement
+    mysqli_stmt_bind_param($stmt, "ssssssss", $name, $email, $address_1, $address_2, $city, $state, $zipcode, $user_id);
+
+    //executes statement
+    mysqli_stmt_execute($stmt);
+
+    //close statement
+    mysqli_stmt_close($stmt);
+    header("location: ../../profileManagement.php?error=none");
+    
+    exit();
+}
 ?>
