@@ -15,6 +15,8 @@ if (isset($_POST["submit"])) {
     }
 
     $proposedgallons = fuelCalc($con, $gallons);
+    echo $proposedgallons;
+    exit();
 }
 else 
 {

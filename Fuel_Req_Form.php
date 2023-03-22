@@ -3,7 +3,7 @@ include('includes/header.php');
 
 function fuelCalc($con, $gallons){
   //call users information
-  session_start(); //This is used to access the global variable for userid
+  //session_start(); //This is used to access the global variable for userid
   //the sql query needed to fetch the specific row 
   $sql = "SELECT * FROM client WHERE client_ID = ?";
   //prepared statement
@@ -82,20 +82,28 @@ function fuelCalc($con, $gallons){
       <b>Zipcode: 66666</b>
     </div>
   </div>
-  <form action="/Fuel_Req_Form.php" method="post">
-    <div class="container">
-      <h1>Fuel Quote Form</h1>
-      <!--used to type the gallons requesteds-->
-      <label for="Gal">Gallons Requested:</label>
-      <input class="GallReq" name="GalReq" type="number" id="Gal" placeholder="Number of Gallons" min="1" max="1000" />
+  
+  <!--simple form that takes in gallons and sends it to the fuelCalc function-->
+  <div class="container">
+    <form action="Fuel_Req_Form.php" method="post">
+      <label for="gallons">Gallons Requested:</label>
+      <input type="text" id="gallons" name="gallons"><br><br>
+      <input type="submit" value="Submit">
+      <?php 
+        //saves inputs into local vars
+        $gallons = $_POST["gallons"];
+        //function to check if user left empty fields
+        if(emptyInputGallons($gallons) !== false){
+            header("location: Fuel_Req_Form.php?error=emptyinput");
+            exit();
+        }?>
+      <!--after submit, the function will be called and the result will be displayed, with a confirm button to send to database-->
+      <div>
+        <b>Price per Gallon: $<?php echo fuelCalc($con, $gallons)?></b>
 
-      <!--used for delivery date-->
-      <label for="DELVDATE">Delivery Date:</label>
-      <input class="DelDate" name="DELIVDate" type="Date" id="DELVDATE" placeholder="Delivery Date" />
-      
+      </div>
     </form>
-    
-    
+
   </div>
 
 </div>
