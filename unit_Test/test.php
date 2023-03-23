@@ -55,6 +55,24 @@ class AccountCreationTest extends TestCase
         // Check that the account was not created due to password mismatch
         $this->assertEquals('Passwords do not match', $response);
     }
+
+    //These 2 are for fuel req form
+    public function testEmptyInputGallons()
+    {
+        require_once 'functions.php';
+        $this->assertTrue(emptyInputGallons(null));
+        $this->assertTrue(emptyInputGallons(''));
+        $this->assertFalse(emptyInputGallons('5'));
+    }
+
+    public function testFuelCalc()
+    {
+        require_once 'functions.php';
+        $con = null; // mock database connection
+        $this->assertEquals(fuelCalc($con, 100), 1967.20);
+        $this->assertEquals(fuelCalc($con, 200), 3934.40);
+        $this->assertEquals(fuelCalc($con, 300), 5901.60);
+    }
 } 
 
 ?>
