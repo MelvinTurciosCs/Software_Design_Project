@@ -18,7 +18,7 @@ if(isset($_POST["submit"])){
     $user_id = $_SESSION["useruid"]; //This is the call to the user id
 
     //create function to update user info
-    update_Password($con, $cpm, $name, $address_1, $address_2, $city, $state, $zipcode, $user_id);
+    update_Profile_Info($con, $cpm, $name, $address_1, $address_2, $city, $state, $zipcode, $user_id);
 
     
 
