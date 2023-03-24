@@ -3,9 +3,6 @@ use PHPUnit\Framework\TestCase;
 
 class RegisterTest extends TestCase
 {
-    const JOHNDOE_USERNAME = 'johndoe';
-    const JANEDOE_USERNAME = 'janedoe';
-
     private $db;
 
     protected function setUp(): void
@@ -26,9 +23,14 @@ class RegisterTest extends TestCase
     public function testValidRegistration()
     {
         // simulate valid user input
-        $_POST["username"] = self::JOHNDOE_USERNAME;
-        $_POST["pwd"] = 'password123';
-        $_POST["pwdrepeat"] = 'password123';
+        $_POST["name"] = 'John Doe';
+        $_POST["address_1"] = '123 Main St';
+        $_POST["address_2"] = 'Apt 1';
+        $_POST["city"] = 'New York';
+        $_POST["state"] = 'NY';
+        $_POST["zip"] = '10001';
+        $_POST["email"] = 'tacobell_sucks@email.com';
+        $_POST["cpm"] = '1.50';
         $_POST["submit"] = true;
 
         // make request to Register.php with user input
