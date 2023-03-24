@@ -8,9 +8,33 @@ include('includes/header.php');
 
 <head>
     <title>Order History</title>
+    <style>
+        table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+        }
+
+        th {
+        background-color: #ddd;
+        text-align: left;
+        padding: 10px;
+        }
+
+        td {
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+        }
+
+        tr:hover {
+        background-color: #f5f5f5;
+        }
+    </style>
 </head>
 
 <body>
+    <h1>Quote History</h1>
     <table>
         <tr>
             <th>Gallons Requested</th>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpunit bootstrap="vendor/autoload.php"
+    colors="true"
+    stopOnFailure="false">
+
+    <php>
+        <ini name="mysqli.default_socket" value="../../../C:/xampp/"/>
+    </php>
+
+    <testsuites>
+        <testsuite name="Register">
+            <directory>unit_Test</directory>
+        </testsuite>
+
+    </testsuites>
+</phpunit>
