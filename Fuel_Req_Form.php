@@ -45,7 +45,7 @@ function fuelCalc($con, $gallons){
       $usermargin = (.02 + $usercpm + $userlocation - $userhistory);
   }
   else{
-      $usermargin = (.02 + $usercpm + $userlocation - $userhistory);
+      $usermargin = (.03 + $usercpm + $userlocation - $userhistory);
   }
   //calculate final price
   $userprice = $usermargin * $gallons;
