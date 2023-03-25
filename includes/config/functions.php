@@ -166,9 +166,9 @@ else if($checkPwd === true){
 }
 
 // Create the function for code for updating the user profile information
-function update_Profile_Info($con, $name, $email, $address_1, $address_2, $city, $state, $zipcode, $user_id){
+function update_Profile_Info($con, $name, $address_1, $address_2, $city, $state, $zipcode, $email, $cpm, $user_id){
    //the question mark prevents injections
-    $sql = "UPDATE client SET name = ?, email = ?, address_1 = ?, address_2 = ?, city = ?, state = ?, zipcode = ? WHERE client_ID = ?; ";
+    $sql = "UPDATE client SET name = ?, address_1 = ?, address_2 = ?, city = ?, state = ?, zipcode = ?, email = ?, cpm = ? WHERE client_ID = ?; ";
 
     //prepared statement
     $stmt = mysqli_stmt_init($con);
@@ -180,7 +180,7 @@ function update_Profile_Info($con, $name, $email, $address_1, $address_2, $city,
     }
 
     //binds statement
-    mysqli_stmt_bind_param($stmt, "ssssssss", $name, $email, $address_1, $address_2, $city, $state, $zipcode, $user_id);
+    mysqli_stmt_bind_param($stmt, "sssssssss", $name, $address_1, $address_2, $city, $state, $zipcode, $email, $cpm, $user_id);
 
     //executes statement
     mysqli_stmt_execute($stmt);

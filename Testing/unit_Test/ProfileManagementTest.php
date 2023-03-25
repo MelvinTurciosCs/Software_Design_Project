@@ -1,7 +1,8 @@
 <?php
+
 use PHPUnit\Framework\TestCase;
 
-class RegisterTest extends TestCase
+class ProfileManagementTest extends TestCase
 {
     private $db;
 
@@ -20,7 +21,7 @@ class RegisterTest extends TestCase
         $this->db->close();
     }
 
-    public function testValidRegistration()
+    public function testValidProfileUpdate()
     {
         // simulate valid user input
         $_POST["name"] = 'John Doe';
@@ -29,41 +30,45 @@ class RegisterTest extends TestCase
         $_POST["city"] = 'New York';
         $_POST["state"] = 'NY';
         $_POST["zip"] = '10001';
-        $_POST["email"] = 'tacobell_sucks@email.com';
+        $_POST["email"] = 'johndoe@email.com';
         $_POST["cpm"] = '1.50';
         $_POST["submit"] = true;
 
-        // make request to Register.php with user input
+        // make request to update_profile.php with user input
         ob_start();
-        include __DIR__ . "/../../includes/config/register.inc.php";
+        include __DIR__ . "/../../includes/config/profileMan.inc.php";
         $response = ob_get_clean();
 
-        // check if registration succeeded
-        $this->assertStringContainsString("Registration successful", $response);
+        // check if profile update succeeded
+        $this->assertStringContainsString("Profile updated successfully", $response);
 
-        // check if user was added to database
-        $result = $this->db->query("SELECT * FROM client WHERE username='" . self::JOHNDOE_USERNAME . "'");
+        // check if user's profile was updated in database
+        $result = $this->db->query("SELECT * FROM client WHERE email='johndoe@email.com'");
         $this->assertEquals(1, $result->num_rows);
     }
 
-    public function testInvalidRegistration()
+    public function testInvalidProfileUpdate()
     {
-        // simulate invalid user input (mismatched passwords)
-        $_POST["username"] = self::JANEDOE_USERNAME;
-        $_POST["pwd"] = 'password456';
-        $_POST["pwdrepeat"] = 'password789';
+        // simulate invalid user input (missing required fields)
+        $_POST["name"] = '';
+        $_POST["address_1"] = '';
+        $_POST["city"] = '';
+        $_POST["state"] = '';
+        $_POST["zip"] = '';
+        $_POST["email"] = '';
+        $_POST["cpm"] = '';
         $_POST["submit"] = true;
 
-        // make request to Register.php with user input
+        // make request to update_profile.php with user input
         ob_start();
-        include __DIR__ . "/../../includes/config/register.inc.php";
+        include __DIR__ . "/../../includes/config/profileMan.inc.php";
         $response = ob_get_clean();
 
-        // check if registration failed
-        $this->assertStringContainsString("Passwords do not match", $response);
+        // check if profile update failed
+        $this->assertStringContainsString("Please fill in all required fields", $response);
 
-        // check that user was not added to database
-        $result = $this->db->query("SELECT * FROM client WHERE username='" . self::JANEDOE_USERNAME . "'");
+        // check that user's profile was not updated in database
+        $result = $this->db->query("SELECT * FROM client WHERE email=''");
         $this->assertEquals(0, $result->num_rows);
     }
 }
