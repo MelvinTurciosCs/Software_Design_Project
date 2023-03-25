@@ -8,6 +8,7 @@ class ProfileManagementTest extends TestCase
 
     protected function setUp(): void
     {
+        session_start(); //Start a session
         $this->db = new mysqli('localhost', 'root', '', 'fuel_db');
 
         // check for connection error
@@ -34,6 +35,9 @@ class ProfileManagementTest extends TestCase
         $_POST["cpm"] = '1.50';
         $_POST["submit"] = true;
 
+        // Add session id to $_POST array
+        $_POST["session_id"] = session_id();
+
         // make request to update_profile.php with user input
         ob_start();
         include __DIR__ . "/../../includes/config/profileMan.inc.php";
@@ -58,6 +62,9 @@ class ProfileManagementTest extends TestCase
         $_POST["email"] = '';
         $_POST["cpm"] = '';
         $_POST["submit"] = true;
+
+        // Add session id to $_POST array
+        $_POST["session_id"] = session_id();
 
         // make request to update_profile.php with user input
         ob_start();
