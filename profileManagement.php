@@ -10,7 +10,7 @@
     </div>
 
     <div class="w-50 m-auto">
-      <form action="includes/config/profileMan.php" method="post">
+      <form action="includes/config/profileMan.inc.php" method="post">
           <div class="form-group">
               <label>Company Profit Margin:</label>
               <input type="text" name="cpm" class="form-control">
@@ -29,11 +29,11 @@
           </div>
           <div class="form-group">
               <label>City:</label>
-              <input type="text" name="City" class="form-control">
+              <input type="text" name="city" class="form-control">
           </div>
           <div class="form-group">
               <label>State:</label>
-              <select>  
+              <select name="state">  
                 <option value="Select">Select</option>}  
                 <option value="TX">Texas</option>  
                 <option value="IL">Illinois</option>  
