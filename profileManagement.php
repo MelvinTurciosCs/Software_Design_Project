@@ -44,6 +44,10 @@
               <label>Zip Code:</label>
               <input type="text" name="zipcode" class="form-control">
           </div>
+          <div class="form-group">
+              <label>Email:</label>
+              <input type="text" name="email" class="form-control">
+          </div>
           <button type="submit" name = "submit" class="btn btn-success">Update Info</button>
       </form>
 
