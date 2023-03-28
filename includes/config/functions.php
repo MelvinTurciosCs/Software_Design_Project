@@ -187,7 +187,7 @@ function update_Profile_Info($con, $name, $address_1, $address_2, $city, $state,
 
     //close statement
     mysqli_stmt_close($stmt);
-    header("location: ../../profileManagement.php?error=none");
+    header("location: ../../customerPage.php?error=none");
     
     exit();
 }
