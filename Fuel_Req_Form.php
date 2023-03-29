@@ -1,5 +1,6 @@
 <?php
 include('includes/header.php');
+include('includes/config/Fuel_Req_Form.inc.php');
 
 function fuelCalc($con, $gallons){
   //call users information
