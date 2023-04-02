@@ -1,5 +1,7 @@
 <?php
 include('includes/header.php');
+
+//putting css in file
 ?>
 
 
@@ -21,7 +23,7 @@ include('includes/header.php');
         text-align: left;
         padding: 10px;
         }
-
+  
         td {
         border-bottom: 1px solid #ddd;
         padding: 10px;
@@ -64,7 +66,7 @@ include('includes/header.php');
         } else {
             echo "0 results";
         }
-
+        //closing connection
         mysqli_close($con);
         ?>
     </table>
