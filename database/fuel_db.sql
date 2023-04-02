@@ -24,6 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `login`
+--
+
+CREATE TABLE login (
+  client_ID int(11) NOT NULL,
+  username varchar(16) DEFAULT NULL,
+  password varchar(255) NOT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `client`
+--
+
+INSERT INTO `login` (`client_ID`, `username`, `password`) VALUES
+(0, 'alice123', '11111111'),
+(8, 'hello', '$2y$10$VynujjA/jU9.KHxyH4mKwOBpFF5e/GNV6lDMm0p1NoEefXN0wh97O');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `client`
 --
 
