@@ -144,6 +144,13 @@ ALTER TABLE `order_history`
 -- 
 --
 
+--
+-- Constraints for table `order_history`
+--
+ALTER TABLE `login`
+  ADD CONSTRAINT `client_ID` FOREIGN KEY (`client_ID`) REFERENCES `client` (`client_ID`);
+
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
