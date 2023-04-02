@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2023 at 01:42 AM
+-- Generation Time: Apr 03, 2023 at 01:52 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -34,7 +34,8 @@ CREATE TABLE `client_info` (
   `Address_2` varchar(40) NOT NULL,
   `city` varchar(10) NOT NULL,
   `state` varchar(2) NOT NULL,
-  `zipcode` int(5) NOT NULL
+  `zipcode` int(5) NOT NULL,
+  `cpm` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
