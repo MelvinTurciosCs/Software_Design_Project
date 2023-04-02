@@ -1,6 +1,7 @@
 <?php
 include('includes/header.php');
-
+//default gallons to zero for now
+$gallons = 0;
 function fuelCalc($con, $gallons){
   //call users information
   //session_start(); //This is used to access the global variable for userid
@@ -63,23 +64,42 @@ function fuelCalc($con, $gallons){
 
     //declare the session variable to fetch specific data, place on where user_id = #user_id
     $user_id = $_SESSION["useruid"];
+    //fetch row from client table with specific $user_id
+    $sql = "SELECT * FROM client WHERE client_ID = ?";
+    //prepared statement
+    $stmt = $con->prepare($sql);
+    //binds the statement
+    $stmt->bind_param("s", $user_id);
+    //query finally executes
+    $stmt->execute();
+    //get the mysqil result
+    $result = $stmt->get_result();
+    //fetching a row
+    $row = $result->fetch_assoc();
+    //save the data into local variables
+    $name = $row["name"];
+    $address1 = $row["address_1"];
+    $address2 = $row["address_2"];
+    $city = $row["city"];
+    $state = $row["state"];
+    $zipcode = $row["zipcode"];
   ?>
   <div class="container">
     <h1>Customer info</h1>
     <div>
-    <b>Name: <?php echo $user_id?><b>
+    <b>Name: <?php echo $name?><b>
     </div>
     <div>
-      <b>Address 1: 123 apple Dr</b>
+      <b>Address 1: <?php echo $address1?></b>
     </div>
     <div>
-      <b>City: Houston</b>
+      <b>City: <?php echo $city?></b>
     </div>
     <div>
-      <b>State: TX</b>
+      <b>State: <?php echo $state?></b>
     </div>
     <div>
-      <b>Zipcode: 66666</b>
+      <b>Zipcode: <?php echo $zipcode?></b>
     </div>
   </div>
   
@@ -87,16 +107,14 @@ function fuelCalc($con, $gallons){
   <div class="container">
     <form action="Fuel_Req_Form.php" method="post">
       <label for="gallons">Gallons Requested:</label>
-      <input type="text" id="gallons" name="gallons"><br><br>
+      <!-- input type number, which defaults to 0, and will only accept numbers -->
+      <input type="number" id="gallons" name="gallons" min="0" value="0">
+      <br><br>
       <input type="submit" value="Submit">
-      <?php 
+      <?php
         //saves inputs into local vars
         $gallons = $_POST["gallons"];
-        //function to check if user left empty fields
-        if(emptyInputGallons($gallons) !== false){
-            header("location: Fuel_Req_Form.php?error=emptyinput");
-            exit();
-        }?>
+      ?>
       <!--after submit, the function will be called and the result will be displayed, with a confirm button to send to database-->
       <div>
         <b>Price per Gallon: $<?php echo fuelCalc($con, $gallons)?></b>
