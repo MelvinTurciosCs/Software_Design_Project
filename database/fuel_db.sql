@@ -119,7 +119,6 @@ ALTER TABLE `order_history`
 --
 ALTER TABLE `client`
   MODIFY `client_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
 -- AUTO_INCREMENT for table `order_history`
 --
@@ -135,6 +134,16 @@ ALTER TABLE `order_history`
 --
 ALTER TABLE `order_history`
   ADD CONSTRAINT `user_ID` FOREIGN KEY (`user_ID`) REFERENCES `client` (`client_ID`);
+
+--
+-- primary key for table `login`
+--
+ALTER TABLE `order_history`
+  ADD PRIMARY KEY (`client_ID`),
+--
+-- 
+--
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
