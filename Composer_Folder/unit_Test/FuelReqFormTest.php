@@ -5,12 +5,13 @@ require_once 'functions.php';
 
 class FuelReqFormTest extends PHPUnit_Framework_TestCase {
 
-    public function testEmptyInputGallons()
-    {
-        $this->assertTrue(emptyInputGallons(null));
-        $this->assertTrue(emptyInputGallons(''));
-        $this->assertFalse(emptyInputGallons('5'));
-    }
+    //*deprecated function.
+    // public function testEmptyInputGallons()
+    // {
+    //     $this->assertTrue(emptyInputGallons(null));
+    //     $this->assertTrue(emptyInputGallons(''));
+    //     $this->assertFalse(emptyInputGallons('5'));
+    // }
 
     public function testFuelCalc()
     {
