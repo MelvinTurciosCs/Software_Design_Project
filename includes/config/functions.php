@@ -41,7 +41,7 @@ function pwdMatch($password, $pwdrepeat){
 
 function uidExists($con, $username){
     //the question mark prevents injections
-    $sql = "SELECT * FROM client WHERE username = ?;";
+    $sql = "SELECT * FROM usercredentials WHERE username = ?;";
     //prepared statement
     $stmt = mysqli_stmt_init($con);
     //checker to see if either fail
@@ -72,7 +72,7 @@ function uidExists($con, $username){
 
 function createUser($con, $username, $password){
     //the question mark prevents injections
-    $sql = "INSERT INTO client (username, password) VALUES (?, ?); ";
+    $sql = "INSERT INTO usercredentials (username, password) VALUES (?, ?); ";
     //prepared statement
     $stmt = mysqli_stmt_init($con);
     //checker to see if either fail
@@ -125,7 +125,7 @@ $pwdHashed = $uidExists["password"];
 $checkPwd = password_verify($password, $pwdHashed);
 
 //the sql query needed to fetch the specific row 
-$sql = "SELECT * FROM client WHERE username = ?";
+$sql = "SELECT * FROM usercredentials WHERE username = ?";
 //prepared statement
 $stmt = $con->prepare($sql);
 //binds the statement
@@ -167,8 +167,8 @@ else if($checkPwd === true){
 
 // Create the function for code for updating the user profile information
 function update_Profile_Info($con, $name, $address_1, $address_2, $city, $state, $zipcode, $email, $cpm, $user_id){
-   //the question mark prevents injections
-    $sql = "UPDATE client SET name = ?, address_1 = ?, address_2 = ?, city = ?, state = ?, zipcode = ?, email = ?, cpm = ? WHERE client_ID = ?; ";
+   //the question mark prevents injections CHANGED
+    $sql = "UPDATE client SET Name = ?, Address_1 = ?, Address_2 = ?, city = ?, state = ?, zipcode = ? WHERE client_ID = ?; ";
 
     //prepared statement
     $stmt = mysqli_stmt_init($con);
