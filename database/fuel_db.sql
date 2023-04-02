@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2023 at 01:26 AM
+-- Generation Time: Apr 03, 2023 at 01:42 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -24,50 +24,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `login`
+-- Table structure for table `client_info`
 --
 
-CREATE TABLE login (
-  client_ID int(11) NOT NULL,
-  username varchar(16) DEFAULT NULL,
-  password varchar(255) NOT NULL
+CREATE TABLE `client_info` (
+  `client_ID` int(100) NOT NULL,
+  `Name` varchar(20) NOT NULL,
+  `Address_1` varchar(40) NOT NULL,
+  `Address_2` varchar(40) NOT NULL,
+  `city` varchar(10) NOT NULL,
+  `state` varchar(2) NOT NULL,
+  `zipcode` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `client`
---
-
-INSERT INTO `login` (`client_ID`, `username`, `password`) VALUES
-(0, 'alice123', '11111111'),
-(8, 'hello', '$2y$10$VynujjA/jU9.KHxyH4mKwOBpFF5e/GNV6lDMm0p1NoEefXN0wh97O');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `client`
---
-
-CREATE TABLE `client` (
-  `client_ID` int(11) NOT NULL,
-  `username` varchar(16) DEFAULT NULL,
-  `password` varchar(255) NOT NULL,
-  `name` varchar(50) DEFAULT NULL,
-  `address_1` varchar(100) DEFAULT NULL,
-  `address_2` varchar(100) DEFAULT NULL,
-  `city` varchar(100) DEFAULT NULL,
-  `state` varchar(2) DEFAULT NULL,
-  `zipcode` int(9) DEFAULT NULL,
-  `email` varchar(25) DEFAULT NULL,
-  `cpm` float DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `client`
---
-
-INSERT INTO `client` (`client_ID`, `username`, `password`, `name`, `address_1`, `address_2`, `city`, `state`, `zipcode`, `email`, `cpm`) VALUES
-(0, 'alice123', '11111111', 'alice volto', '123 apple drive', '124 pineapple drive', 'Houston', 'TX', 77000, 'alice54@yahoo.com', 10),
-(8, 'hello', '$2y$10$VynujjA/jU9.KHxyH4mKwOBpFF5e/GNV6lDMm0p1NoEefXN0wh97O', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -86,21 +54,26 @@ CREATE TABLE `order_history` (
   `del_Address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `order_history`
+-- Table structure for table `usercredentials`
 --
 
-INSERT INTO `order_history` (`order_ID`, `total_price`, `user_ID`, `delv_date`, `ccpm`, `request_Gals`, `suggested_Price`, `del_Address`) VALUES
-(1, 20022, 8, '2023-04-12', 40, 100, 20, '123 apple st');
+CREATE TABLE `usercredentials` (
+  `id` int(11) NOT NULL,
+  `username` varchar(10) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `client`
+-- Indexes for table `client_info`
 --
-ALTER TABLE `client`
+ALTER TABLE `client_info`
   ADD PRIMARY KEY (`client_ID`);
 
 --
@@ -111,14 +84,21 @@ ALTER TABLE `order_history`
   ADD KEY `user_ID` (`user_ID`);
 
 --
+-- Indexes for table `usercredentials`
+--
+ALTER TABLE `usercredentials`
+  ADD PRIMARY KEY (`id`,`username`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `client`
+-- AUTO_INCREMENT for table `client_info`
 --
-ALTER TABLE `client`
-  MODIFY `client_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE `client_info`
+  MODIFY `client_ID` int(100) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `order_history`
 --
@@ -126,31 +106,26 @@ ALTER TABLE `order_history`
   MODIFY `order_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `usercredentials`
+--
+ALTER TABLE `usercredentials`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `client_info`
+--
+ALTER TABLE `client_info`
+  ADD CONSTRAINT `client_ID` FOREIGN KEY (`client_ID`) REFERENCES `usercredentials` (`id`);
 
 --
 -- Constraints for table `order_history`
 --
 ALTER TABLE `order_history`
-  ADD CONSTRAINT `user_ID` FOREIGN KEY (`user_ID`) REFERENCES `client` (`client_ID`);
-
---
--- primary key for table `login`
---
-ALTER TABLE `login`
-  ADD PRIMARY KEY (`username`);
---
--- 
---
-
---
--- Constraints for table `order_history`
---
-ALTER TABLE `login`
-  ADD CONSTRAINT `client_ID` FOREIGN KEY (`client_ID`) REFERENCES `client` (`client_ID`);
-
-
+  ADD CONSTRAINT `user_ID` FOREIGN KEY (`user_ID`) REFERENCES `usercredentials` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
