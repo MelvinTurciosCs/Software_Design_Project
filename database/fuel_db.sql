@@ -139,7 +139,7 @@ ALTER TABLE `order_history`
 -- primary key for table `login`
 --
 ALTER TABLE `order_history`
-  ADD PRIMARY KEY (`client_ID`),
+  ADD PRIMARY KEY (`username`),
 --
 -- 
 --
