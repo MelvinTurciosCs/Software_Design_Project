@@ -180,7 +180,7 @@ function update_Profile_Info($con, $Name, $Address_1, $Address_2, $city, $state,
     }
 
     //binds statement
-    mysqli_stmt_bind_param($stmt, "sssssssss", $name, $address_1, $address_2, $city, $state, $zipcode, $email, $cpm, $user_id);
+    mysqli_stmt_bind_param($stmt, "sssssssss", $Name, $Address_1, $Address_2, $city, $state, $zipcode, $email, $cpm, $user_id);
 
     //executes statement
     mysqli_stmt_execute($stmt);
