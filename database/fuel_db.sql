@@ -132,3 +132,51 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+/* Dummy user credentials variables for testing. Each user has credentials username: user#, password: password# */;
+INSERT INTO usercredentials (username, password) VALUES 
+('user1', '$2y$10$ZDlRZ0tjZlVkRVpOeHNoHuJjAr1yO7VrDUMzrQX9ECksvJZo7LwE2'),
+('user2', '$2y$10$TlhzsR1ylsXcUowvP8JzWuE05mJxlraxgGpI8izydfEMaCn3qIHui'),
+('user3', '$2y$10$Gt4x4t4ycNtBCxE74.AA5OmS9X9tSwC1zYI/ymdcpC4tGk4tF88yK'),
+('user4', '$2y$10$g1DZ5Yzkgk1Rjlnxg.n/iO46g8al0lWIz0q3dXOZzvQZ1GSmwCFqq'),
+('user5', '$2y$10$qTb.rubRKPes9XowhDRvYOhWIMwHClpF10V7e/1v8kV7Ddyr54Gmi'),
+('user6', '$2y$10$T3w6P3U6MFbT28KjjQs1IOi9XsfglPmtz0nxK8pObluV7FupM1jK6'),
+('user7', '$2y$10$KjveuWZzYIJ/PRd4TP4tFus61tW5y/15Zn46HBC.YRFLhWeQ2Qc/i'),
+('user8', '$2y$10$eTFeKjZ23wCZQ7VUug89C.YrrmkE9Kx6yHeO/KKcYfznn7iL0M1Oa'),
+('user9', '$2y$10$iXOxQ2R.PtW5Iv2N1hLZwuf4p77e0q1gKdha5TKH0tS8.56tjKQvG'),
+('user10', '$2y$10$GW5qjM5X5qrnSbCK8jAEG.12vRYvvZn1zZlKjWfDzAtvLjfX9xGou');
+
+
+/* Dummy client info variables for testing. Each client has a unique ID, name, address, city, state, zipcode, and cpm */;
+INSERT INTO client_info (client_ID, Name, Address_1, Address_2, city, state, zipcode, cpm) VALUES
+(1, 'John Smith', '123 Main St', '', 'Austin', 'TX', 78701, 50),
+(2, 'Jane Doe', '456 Elm St', '', 'Houston', 'TX', 77002, 75),
+(3, 'Bob Johnson', '789 Oak St', '', 'Dallas', 'CA', 90001, 30),
+(4, 'Emily Davis', '246 Walnut St', '', 'San Antonio', 'TX', 78201, 60),
+(5, 'Mark Wilson', '369 Pine St', '', 'Fort Worth', 'NY', 10001, 40),
+(6, 'Samantha Lee', '753 Maple St', '', 'Plano', 'TX', 75023, 80),
+(7, 'David Kim', '159 Birch St', '', 'Irving', 'CA', 90002, 10),
+(8, 'Melissa Brown', '852 Cedar St', '', 'El Paso', 'TX', 79901, 20),
+(9, 'Thomas Martin', '369 Oakwood St', '', 'Arlington', 'IL', 60004, 90),
+(10, 'Jennifer Jones', '7536 Elmwood St', '', 'Austin', 'TX', 78745, 55);
+
+
+/* Dummy orders for testing. Each user has ~2 orders. */
+INSERT INTO order_history (total_price, user_ID, delv_date, ccpm, request_Gals, suggested_Price, del_Address) VALUES
+(150.25, 2, '2023-03-02', 0.1, 136.59, 150.25, '456 Elm St, Houston, TX'),
+(225.75, 4, '2023-03-05', 0.2, 187.28, 225.75, '246 Walnut St, San Antonio, TX'),
+(275.00, 6, '2023-03-07', 0.3, 177.91, 275.00, '753 Maple St, Plano, TX'),
+(320.50, 8, '2023-03-11', 0.1, 291.36, 320.50, '852 Cedar St, El Paso, TX'),
+(185.75, 3, '2023-03-14', 0.2, 154.79, 185.75, '789 Oak St, Dallas, CA'),
+(275.25, 7, '2023-03-18', 0.3, 177.92, 275.25, '159 Birch St, Irving, CA'),
+(335.50, 9, '2023-03-20', 0.1, 305.54, 335.50, '369 Oakwood St, Arlington, IL'),
+(150.50, 1, '2023-03-24', 0.2, 125.41, 150.50, '123 Main St, Austin, TX'),
+(210.75, 5, '2023-03-26', 0.1, 191.59, 210.75, '369 Pine St, Fort Worth, NY'),
+(290.25, 10, '2023-03-28', 0.3, 186.26, 290.25, '7536 Elmwood St, Austin, TX'),
+(145.25, 2, '2023-03-02', 0.1, 132.05, 145.25, '456 Elm St, Houston, TX'),
+(235.75, 4, '2023-03-05', 0.2, 196.46, 235.75, '246 Walnut St, San Antonio, TX'),
+(265.00, 6, '2023-03-07', 0.3, 170.29, 265.00, '753 Maple St, Plano, TX'),
+(340.50, 8, '2023-03-11', 0.1, 309.91, 340.50, '852 Cedar St, El Paso, TX'),
+(195.75, 3, '2023-03-14', 0.2, 162.57, 195.75, '789 Oak St, Dallas, CA'),
+(285.25, 7, '2023-03-18', 0.3, 183.94, 285.25, '159 Birch St, Irving, CA'),
+(345.50, 9, '2023-03-20', 0.1, 314.09, 345.50, '369 Oakwood St, Arlington, IL'),
