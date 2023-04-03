@@ -148,7 +148,7 @@ else if($checkPwd === true){
 
     session_start();
     //Stores the client ID for the session
-    $_SESSION["useruid"] = $uidExists["client_ID"];
+    $_SESSION["useruid"] = $uidExists["id"];
     if(is_null($row['name']))
     {
         header("location: ../../profileManagement.php?");
