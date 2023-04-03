@@ -169,7 +169,7 @@ else if($checkPwd === true){
 function update_Profile_Info($con, $Name, $Address_1, $Address_2, $city, $state, $zipcode, $cpm, $user_id){
    IF EXISTS (SELECT * FROM client_info WHERE client_ID = $user_id)
    {
-    UPDATE client_info SET Name = ?, Address_1 = ?, Address_2 = ?, city = ?, state = ?, zipcode = ?, cpm = ? WHERE client_ID = ?;
+        UPDATE client_info SET Name = ?, Address_1 = ?, Address_2 = ?, city = ?, state = ?, zipcode = ?, cpm = ? WHERE client_ID = ?;
    }
    ELSE
    {
