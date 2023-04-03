@@ -167,14 +167,12 @@ else if($checkPwd === true){
 
 // Create the function for code for updating the user profile information
 function update_Profile_Info($con, $Name, $Address_1, $Address_2, $city, $state, $zipcode, $cpm, $user_id){
-   IF EXISTS (SELECT * FROM client_info WHERE client_ID = $user_id)
-   {
+   $sql = "IF EXISTS(SELECT * FROM client_info WHERE client_ID = $user_id) BEGIN
         UPDATE client_info SET Name = ?, Address_1 = ?, Address_2 = ?, city = ?, state = ?, zipcode = ?, cpm = ? WHERE client_ID = ?;
-   }
-   ELSE
-   {
+    END
+    ELSE BEGIN
         INSERT INTO client_info (Name, Address_1, Address_2, city, state, zipcode, cpm, client_ID) VALUES (?, ?, ?, ?, ?, ?, ?, ?);
-   }
+    END";
     
     //binds statement
     mysqli_stmt_bind_param($stmt, "ssssssss", $Name, $Address_1, $Address_2, $city, $state, $zipcode, $cpm, $user_id);
