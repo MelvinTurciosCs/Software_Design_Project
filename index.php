@@ -3,7 +3,9 @@
 ?>
   <!-- This will be an image that will have a button for login and register -->
   <div class="banner image">
-    
+    <img src="images/Banner.png" alt="banner" style="width:100%; height:100%;">
+  </div>
+  <!-- This is the end of the banner image that was added -->
 
   <!-- About Us Information: History, Mission, Core Values -->
   <div class="About_Container">
