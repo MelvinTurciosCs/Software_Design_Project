@@ -1,6 +1,9 @@
 <?php
     include('includes/header.php');
 ?>
+  <!-- This will be an image that will have a button for login and register -->
+  <div class="banner image">
+    
 
   <!-- About Us Information: History, Mission, Core Values -->
   <div class="About_Container">
