@@ -197,4 +197,32 @@ function update_Profile_Info($con, $Name, $Address_1, $Address_2, $city, $state,
 
 }
 
+function insert_Order($con, $Tprice, $user_id, $delv_date, $ccpm, $req_Gals, $Sugg_Price, $delv_Address)
+{
+
+    $sql = "INSERT INTO order_history (total_price, user_ID, delv_date, ccpm, request_Gals, suggested_Price, del_Address) VALUES (?, ?, ?, ?, ?, ?, ?);";
+
+    // prepared statement
+    $stmt = mysqli_stmt_init($con);
+
+    // checker to see if either fail
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../../profileManagement.php?error=stmtfailed");
+        exit();
+    }
+    
+    // bind statement
+    mysqli_stmt_bind_param($stmt, "sssssss", $Tprice, $user_id, $delv_date, $ccpm, $req_Gals, $Sugg_Price, $delv_Address);
+    
+        // executes statement
+        mysqli_stmt_execute($stmt);
+    
+        // close statement
+        mysqli_stmt_close($stmt);
+
+        header("location: ../../Fuel_Req_Form.php?error=none");
+
+        exit();
+}
+
 ?>
