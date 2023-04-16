@@ -21,7 +21,7 @@ if (isset($_POST["submit"])) {
 }
 else 
 {
-    header("location: ../../Login.php");
+    header("location: ../../Fuel_Req_Form.php");
     exit();
 }
 
