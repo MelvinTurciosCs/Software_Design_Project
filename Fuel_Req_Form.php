@@ -108,7 +108,7 @@ function fuelCalc($con, $gallons){
     <form action="Fuel_Req_Form.php" method="post">
     <label for="del_Address">Address:</label>
       <!-- input type number, which defaults to 0, and will only accept numbers -->
-      <input type="text" name="del_Address" id="del_Address" placeholder="Enter Address" required>
+      <input type="text" name="delv_Address" id="delv_Address" placeholder="Enter Address" required>
       <br><br>
       <label for="delv_date">Deliver Date:</label>
       <!-- input type number, which defaults to 0, and will only accept numbers -->
