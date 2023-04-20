@@ -1,9 +1,8 @@
 <?php
 include('includes/header.php');
 ?>
+
 <br>
-
-
 <!-- Resister Form -->
 <form action="includes/config/register.inc.php" method="post">
   <div class="headingContainer">
@@ -33,13 +32,15 @@ include('includes/header.php');
     <button class="submit_Button " type="submit" name="submit">Create Account</button>
 
 
+
+
     <!-- Sign up link -->
-    <p class="register">Already have an account? <a href="#">Login</a></p>
+    <p class="register">Already have an account? <a href="./Login.php">Login</a></p>
   </div>
 </form>
-
 <br>
 <?php
+
 
 if (isset($_GET["error"])) {
   if ($_GET["error"] == "emptyinput") {
@@ -47,9 +48,9 @@ if (isset($_GET["error"])) {
   } else if ($_GET["error"] == "invaliduid") {
     echo "<p>Choose a proper username!</p>";
   } else if ($_GET["error"] == "passwordnotmatch") {
-    echo "<p>Password does not match!</p>";
+    echo "<p>Passwords do not match!</p>";
   } else if ($_GET["error"] == "usernametaken") {
-    echo "<p>Username already taken!</p>";
+    echo "<p>Username has already been taken!</p>";
   } else if ($_GET["error"] == "stmtfailed") {
     echo "<p>Something wrong, try again!</p>";
   } else if ($_GET["error"] == "none") {
