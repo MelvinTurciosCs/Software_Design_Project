@@ -27,20 +27,19 @@
   </div>
 
   <div class="image_div">
-  <div class="image_div_childb" style="max-width:30%; display: flex; flex-direction: column;">
+  <div class="image_div_childb" style="max-width:30%; display: flex; flex-direction: column; align-items: center;">
     <img src="./images/tanker.png" title="oil tank icons" alt="image1">
-    <p style="text-align: center;">img.</p>
+    <p style="text-align: center;">We have started a full-ride scholarship program! Prove you have a vehicle that has a max gas mileage of 10mpg and you will receive this scholarship! Terms and Conditions Apply.</p>
   </div>
-  <div class="image_div_childb" style="max-width:30%; display: flex; flex-direction: column;">
+  <div class="image_div_childb" style="max-width:30%; display: flex; flex-direction: column; align-items: center;">
     <img src="./images/fossil-fuel.png" alt="image2">
-    <p style="text-align: center;">Cleanly sourced from fracking rigs near local farms!</p>
+    <p style="text-align: center;">Our oil is cleanly sourced from local farms, we use fracking methods to further clean the environment. We are contributing to the health of the planet while providing high quality fuel!</p>
   </div>
-  <div class="image_div_childb" style="max-width:30%; display: flex; flex-direction: column;">
+  <div class="image_div_childb" style="max-width:30%; display: flex; flex-direction: column; align-items: center;">
     <img src="./images/drilling-rig.png" alt="image3">
-    <p style="text-align: center;">We have recently expanded to polluting the ocean as well!</p>
+    <p style="text-align: center;">We have recently expanded to polluting the ocean as well!We have recently expanded to polluting the ocean as well!We have recently expanded to polluting the ocean as well!</p>
   </div>
 </div>
-
 
 <style>
 .image_div {
@@ -48,22 +47,20 @@
   justify-content: space-between;
 }
 
-.image_div_child {
-  text-align: center;
-}
-
 .image_div_childb img {
   width: 150px;
   height: 150px;
 }
 
-.image_div_child p {
+.image_div_childb p {
   margin: 0;
   padding-top: 5px;
   padding: 10px;
-  font-size: 12px;
+  font-size: 20px;
 }
 </style>
+
+
 
 
   <!-- Contact Us and Google Image in background-->
