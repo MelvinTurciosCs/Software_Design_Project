@@ -6,7 +6,7 @@
 <br>
 
   <!-- Login Form -->
-  <form action="includes/config/login.inc.php" method="post">
+  <form class="loginForm" action="includes/config/login.inc.php" method="post">
     <div class="headingContainer">
       <h3>Login</h3>
       <p>Sign in to your account with your username and password</p>

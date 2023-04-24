@@ -10,7 +10,7 @@
     </div>
 
     <div class="w-50 m-auto">
-      <form action="includes/config/profileMan.inc.php" method="post">
+      <form class="profileManForm" action="includes/config/profileMan.inc.php" method="post">
           <div class="form-group">
               <label>Company Profit Margin (XX%):</label>
               <input type="text" name="cpm" class="form-control">

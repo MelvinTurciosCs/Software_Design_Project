@@ -17,7 +17,7 @@
     </div>
 
     <div class="w-50 m-auto">
-      <form action="about.php" method="post">
+      <form class="proposedQuoteForm" action="about.php" method="post">
           <div class="form-group">
               <label>Gallons:</label>
               <input type="text" name="gallons" class="form-control">

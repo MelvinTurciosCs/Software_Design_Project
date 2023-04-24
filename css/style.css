@@ -21,6 +21,7 @@
 .navbar-custom{
   background-color: #E1856C;
 }
+
 .topPage{
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../images/istockphoto-163911364-612x612.jpg");
   background-repeat: no-repeat;
@@ -331,13 +332,33 @@
   .container{
     padding-top: 150px;
   }
-  form{
+
+  /* This is the css styling for the login form */
+  .loginForm {
     width: 35rem;
     margin: auto;
-    color: whitesmoke;
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(11, 15, 13, 0.582);
+    color: #e8e5d2;
+    background-color: #E1856C;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+  }
+
+  /* This is the css styling for the registration form */
+  .registerForm {
+    width: 35rem;
+    margin: auto;
+    color: #e8e5d2;
+    background-color: #E1856C;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+  }
+
+  /* This is the css styling for the Profile Management Page */
+  .profileManForm {
+    width: 35rem;
+    margin: auto;
+    color: #e8e5d2;
+    background-color: #E1856C;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
   }

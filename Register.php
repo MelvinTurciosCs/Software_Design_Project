@@ -4,7 +4,7 @@ include('includes/header.php');
 
 <br>
 <!-- Resister Form -->
-<form action="includes/config/register.inc.php" method="post">
+<form class="registerForm" action="includes/config/register.inc.php" method="post">
   <div class="headingContainer">
     <h3>Sign Up</h3>
     <p>Create an account</p>
