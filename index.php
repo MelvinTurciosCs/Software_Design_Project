@@ -3,6 +3,10 @@
 ?>
   <!-- This will be an image that will have a button for login and register -->
   <div class="banner image">
+  <div class="image_div_child">
+    <img src="images/Get the Best Fuel Quote in Town.png" title="Tanker Truck" alt="image1" style="width: 100%">
+    <div class="image_div_child_text"></div>
+  </div>
     
 
   <!-- About Us Information: History, Mission, Core Values -->
@@ -22,27 +26,45 @@
     </div>
   </div>
 
-  <!-- Images with descriptions -->
   <div class="image_div">
-    <div class="image_div_child">
-      <img href="https://www.flaticon.com/free-icons/oil-tank" title="oil tank icons" alt="image1" style="width:75px; height:75px">
-      <div class="image_div_child_text">
-        <p>Image 1</p>
-      </div>
-    </div>
-    <div class="image_div_child">
-      <img src="images/2.jpg" alt="image2" style="width:75px; height:75px">
-      <div class="image_div_child_text">
-        <p>Image 2</p>
-      </div>
-    </div>
-    <div class="image_div_child">
-      <img src="images/3.jpg" alt="image3" style="width:100%; height:100%;">
-      <div class="image_div_child_text">
-        <p>Image 3</p>
-      </div>
-    </div>
+  <div class="image_div_childb" style="max-width:30%; display: flex; flex-direction: column;">
+    <img src="./images/tanker.png" title="oil tank icons" alt="image1">
+    <p style="text-align: center;">img.</p>
   </div>
+  <div class="image_div_childb" style="max-width:30%; display: flex; flex-direction: column;">
+    <img src="./images/fossil-fuel.png" alt="image2">
+    <p style="text-align: center;">Cleanly sourced from fracking rigs near local farms!</p>
+  </div>
+  <div class="image_div_childb" style="max-width:30%; display: flex; flex-direction: column;">
+    <img src="./images/drilling-rig.png" alt="image3">
+    <p style="text-align: center;">We have recently expanded to polluting the ocean as well!</p>
+  </div>
+</div>
+
+
+<style>
+.image_div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image_div_child {
+  text-align: center;
+}
+
+.image_div_childb img {
+  width: 150px;
+  height: 150px;
+}
+
+.image_div_child p {
+  margin: 0;
+  padding-top: 5px;
+  padding: 10px;
+  font-size: 12px;
+}
+</style>
+
 
   <!-- Contact Us and Google Image in background-->
   </div>
