@@ -179,4 +179,4 @@ INSERT INTO order_history (total_price, user_ID, delv_date, ccpm, request_Gals, 
 (340.50, 8, '2023-03-11', 0.1, 309.91, 340.50, '852 Cedar St, El Paso, TX'),
 (195.75, 3, '2023-03-14', 0.2, 162.57, 195.75, '789 Oak St, Dallas, CA'),
 (285.25, 7, '2023-03-18', 0.3, 183.94, 285.25, '159 Birch St, Irving, CA'),
-(345.50, 9, '2023-03-20', 0.1, 314.09, 345.50, '369 Oakwood St, Arlington, IL'),
+(345.50, 9, '2023-03-20', 0.1, 314.09, 345.50, '369 Oakwood St, Arlington, IL');
