@@ -3,6 +3,10 @@
 ?>
   <!-- This will be an image that will have a button for login and register -->
   <div class="banner image">
+  <div class="image_div_child">
+    <img src="images/Get the Best Fuel Quote in Town.png" title="Tanker Truck" alt="image1" style="width: 100%">
+    <div class="image_div_child_text"></div>
+  </div>
     
 
   <!-- About Us Information: History, Mission, Core Values -->
@@ -25,8 +29,21 @@
   <!-- Images with descriptions -->
   <div class="image_div">
     <div class="image_div_child">
-      <img src="images/Get the Best Fuel Quote in Town.png" title="Tanker Truck" alt="image1" style="width: 100%; height: 400px">
+      <img href="https://www.flaticon.com/free-icons/oil-tank" title="oil tank icons" alt="image1" style="width:75px; height:75px">
       <div class="image_div_child_text">
+        <p>Image 1</p>
+      </div>
+    </div>
+    <div class="image_div_child">
+      <img src="images/2.jpg" alt="image2" style="width:75px; height:75px">
+      <div class="image_div_child_text">
+        <p>Image 2</p>
+      </div>
+    </div>
+    <div class="image_div_child">
+      <img src="images/3.jpg" alt="image3" style="width:100%; height:100%;">
+      <div class="image_div_child_text">
+        <p>Image 3</p>
       </div>
     </div>
   </div>
