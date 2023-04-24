@@ -27,19 +27,20 @@
   </div>
 
   <div class="image_div">
-  <div class="image_div_childb">
+  <div class="image_div_childb" style="max-width:30%; display: flex; flex-direction: column;">
     <img src="./images/tanker.png" title="oil tank icons" alt="image1">
     <p style="text-align: center;">img.</p>
   </div>
-  <div class="image_div_childb">
+  <div class="image_div_childb" style="max-width:30%; display: flex; flex-direction: column;">
     <img src="./images/fossil-fuel.png" alt="image2">
     <p style="text-align: center;">Cleanly sourced from fracking rigs near local farms!</p>
   </div>
-  <div class="image_div_childb">
+  <div class="image_div_childb" style="max-width:30%; display: flex; flex-direction: column;">
     <img src="./images/drilling-rig.png" alt="image3">
     <p style="text-align: center;">We have recently expanded to polluting the ocean as well!</p>
   </div>
 </div>
+
 
 <style>
 .image_div {
