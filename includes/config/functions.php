@@ -220,7 +220,7 @@ function insert_Order($con, $Tprice, $user_id, $delv_date, $ccpm, $req_Gals, $Su
         // close statement
         mysqli_stmt_close($stmt);
 
-        header("location: ../../Fuel_Req_Form.php?error=none");
+        header("location: ../../fuelhistory.php?error=none");
 
         exit();
 }

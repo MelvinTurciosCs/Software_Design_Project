@@ -106,9 +106,9 @@ function fuelCalc($con, $gallons){
   <!--simple form that takes in gallons and sends it to the fuelCalc function-->
   <div class="container">
     <form action="Fuel_Req_Form.php" method="post">
-    <label for="del_Address">Address:</label>
+    <!--label for="del_Address">Address:</!--label>
       <!-- input type number, which defaults to 0, and will only accept numbers -->
-      <input type="text" name="delv_Address" id="delv_Address" placeholder="Enter Address" required>
+      <!--input type="text" name="delv_Address" id="delv_Address" placeholder="Enter Address" required-->
       <br><br>
       <label for="delv_date">Deliver Date:</label>
       <!-- input type number, which defaults to 0, and will only accept numbers -->
@@ -119,6 +119,35 @@ function fuelCalc($con, $gallons){
       <input type="number" id="gallons" name="gallons" min="0" value="0">
       <br><br>
       <input type="submit" value="Submit">
+      <!--confirm button to send to database-->
+
+      <form action="fuel_req.php" method="post">
+      <button class="submit_Button" name = "submit" type="submit">confirm</button>
+      </form>
+      <!--php code to save the inputs into local variables-->
+    <?php
+      // Get the saved input values
+      //$delv_Address = $_POST["delv_Address"];
+      $delv_date = $_POST["delv_date"];
+      $gallons = $_POST["gallons"];
+
+      $total_Price = fuelCalc($con, $gallons);
+      // Insert the values into the order_history table
+      //Should call the values from the session variable
+      $user_ID = $_SESSION["useruid"];
+      $usercpm = $row["cpm"];
+      $address1 = $row["Address_1"];
+      //sql statement to insert the values into the table
+      $sql = "INSERT INTO order_history (total_price, user_ID, delv_date, ccpm, request_Gals, suggested_Price, del_Address)
+      VALUES ('$total_Price', '$user_ID', '$delv_date', '$usercpm', '$gallons', '$total_Price', '$address1')";
+
+      if ($con->query($sql) === TRUE) {
+          echo "New order record created successfully";
+      } else {
+          echo "Error: " . $sql . "<br>" . $conn->error;
+      }
+    ?>
+
       <?php
         //saves inputs into local vars
         $gallons = $_POST["gallons"];
