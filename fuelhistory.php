@@ -47,7 +47,11 @@
             $user_id = $_SESSION["useruid"];
 
             //gettin user's order history
-            $sql = "SELECT request_Gals, del_Address, delv_date, suggested_Price, total_price FROM order_history WHERE user_ID = '$user_id'";
+            $sql = "SELECT request_Gals, del_Address, delv_date, suggested_Price, total_price 
+                    FROM order_history 
+                    WHERE user_ID = '$user_id' 
+                    ORDER BY delv_date DESC";
+
             $result = mysqli_query($con, $sql);
 
             //if there are rows returned, display them in a table
