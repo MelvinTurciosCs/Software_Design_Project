@@ -52,10 +52,7 @@ include('includes/header.php');
              <p><?php echo $row['zipcode']?></p> 
         </div>
     </form>
-        <!-- Submit button -->
-        <a href="Fuel_Req_Form.php">
-        <button class="submit_Button" name = "submit" type="submit">Get Quote</button> 
-        </a>
+        
 
 
 
