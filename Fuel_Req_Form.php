@@ -1,7 +1,10 @@
 <?php
 include('includes/header.php');
 //default gallons to zero for now
-$gallons = 0;
+
+$gallons = isset($_POST['gallons']) ? $_POST['gallons'] : 0;
+$delv_date = isset($_POST['delv_date']) ? $_POST['delv_date'] : '2000-01-01';
+
 function fuelCalc($con, $gallons){
   //call users information
   //session_start(); //This is used to access the global variable for userid
@@ -101,10 +104,10 @@ function fuelCalc($con, $gallons){
     <div>
       <b>Zipcode: <?php echo $zipcode?></b>
     </div>
-  </div>
-  
+  </div>  
   <!--simple form that takes in gallons and sends it to the fuelCalc function-->
   <div class="container">
+
     <form action="Fuel_Req_Form.php" method="post">
     <!--label for="del_Address">Address:</!--label>
       <!-- input type number, which defaults to 0, and will only accept numbers -->
@@ -112,7 +115,7 @@ function fuelCalc($con, $gallons){
       <br><br>
       <label for="delv_date">Deliver Date:</label>
       <!-- input type number, which defaults to 0, and will only accept numbers -->
-      <input type="date" id="delv_date" name="delv_date"  required>
+      <input type="date" id="delv_date" name="delv_date" value='2000-01-01' required>
       <br><br>
       <label for="gallons">Gallons Requested:</label>
       <!-- input type number, which defaults to 0, and will only accept numbers -->
@@ -128,8 +131,9 @@ function fuelCalc($con, $gallons){
     <?php
       // Get the saved input values
       //$delv_Address = $_POST["delv_Address"];
-      $delv_date = $_POST["delv_date"];
-      $gallons = $_POST["gallons"];
+      $gallons = isset($_POST['gallons']) ? $_POST['gallons'] : 0;
+      $delv_date = isset($_POST['delv_date']) ? $_POST['delv_date'] : '2000-01-01';
+
 
       $total_Price = fuelCalc($con, $gallons);
       // Insert the values into the order_history table
@@ -144,13 +148,14 @@ function fuelCalc($con, $gallons){
       if ($con->query($sql) === TRUE) {
           echo "New order record created successfully";
       } else {
-          echo "Error: " . $sql . "<br>" . $conn->error;
+          echo "Error: " . $sql . "<br>" . $con->error;
       }
     ?>
 
       <?php
         //saves inputs into local vars
-        $gallons = $_POST["gallons"];
+        $gallons = isset($_POST['gallons']) ? $_POST['gallons'] : 0;
+
       ?>
       <!--after submit, the function will be called and the result will be displayed, with a confirm button to send to database-->
       <div>
