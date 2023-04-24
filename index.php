@@ -29,15 +29,15 @@
   <div class="image_div">
   <div class="image_div_child">
     <img src="./images/tanker.png" title="oil tank icons" alt="image1">
-    <p>Image 1</p>
+    <p>The safest fuel transportation available!</p>
   </div>
   <div class="image_div_child">
-    <img src="./images/fossil-fuel.jpg" alt="image2">
-    <p>Image 2</p>
+    <img src="./images/fossil-fuel.png" alt="image2">
+    <p>Cleanly sourced from fracking rigs near local farms!</p>
   </div>
   <div class="image_div_child">
-    <img src="./images/165-1654015_fossil-fuel-icon-oil-underground-icon.png" alt="image3">
-    <p>Image 3</p>
+    <img src="./images/drilling-rig.png" alt="image3">
+    <p>We have recently expanded to polluting the ocean as well!</p>
   </div>
 </div>
 
@@ -52,13 +52,14 @@
 }
 
 .image_div_child img {
-  width: 300px;
-  height: 300px;
+  width: 150px;
+  height: 150px;
 }
 
 .image_div_child p {
   margin: 0;
   padding-top: 5px;
+  padding: 150px;
   font-size: 12px;
 }
 </style>
