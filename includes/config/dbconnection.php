@@ -3,7 +3,7 @@
 $serverName = "localhost";
 $userName = "root";
 $password = "";
-$dbName = "fueldb";
+$dbName = "fuel_db";
 
 //create connection 
 $con = mysqli_connect($serverName, $userName, $password, $dbName);
