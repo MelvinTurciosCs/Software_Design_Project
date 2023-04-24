@@ -141,6 +141,7 @@ function fuelCalc($con, $gallons){
       $user_ID = $_SESSION["useruid"];
       $usercpm = $row["cpm"];
       $address1 = $row["Address_1"];
+      if (isset($_POST["submit"])) {
       //sql statement to insert the values into the table
       $sql = "INSERT INTO order_history (total_price, user_ID, delv_date, ccpm, request_Gals, suggested_Price, del_Address)
       VALUES ('$total_Price', '$user_ID', '$delv_date', '$usercpm', '$gallons', '$total_Price', '$address1')";
@@ -150,6 +151,7 @@ function fuelCalc($con, $gallons){
       } else {
           echo "Error: " . $sql . "<br>" . $con->error;
       }
+    }
     ?>
 
       <?php
