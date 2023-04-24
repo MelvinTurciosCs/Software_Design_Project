@@ -31,7 +31,7 @@ class ProfileManagementTest extends TestCase
         $_POST["city"] = 'New York';
         $_POST["state"] = 'NY';
         $_POST["zip"] = '10001';
-        $_POST["email"] = 'johndoe@email.com';
+        //$_POST["email"] = 'johndoe@email.com';
         $_POST["cpm"] = '1.50';
         $_POST["submit"] = true;
 

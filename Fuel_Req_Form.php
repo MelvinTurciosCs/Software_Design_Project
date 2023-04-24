@@ -6,7 +6,7 @@ function fuelCalc($con, $gallons){
   //call users information
   //session_start(); //This is used to access the global variable for userid
   //the sql query needed to fetch the specific row 
-  $sql = "SELECT * FROM client WHERE client_ID = ?";
+  $sql = "SELECT * FROM client_info WHERE client_ID = ?";
   //prepared statement
   $stmt = $con->prepare($sql);
   //binds the statement
@@ -65,7 +65,7 @@ function fuelCalc($con, $gallons){
     //declare the session variable to fetch specific data, place on where user_id = #user_id
     $user_id = $_SESSION["useruid"];
     //fetch row from client table with specific $user_id
-    $sql = "SELECT * FROM client WHERE client_ID = ?";
+    $sql = "SELECT * FROM client_info WHERE client_ID = ?";
     //prepared statement
     $stmt = $con->prepare($sql);
     //binds the statement
@@ -77,9 +77,9 @@ function fuelCalc($con, $gallons){
     //fetching a row
     $row = $result->fetch_assoc();
     //save the data into local variables
-    $name = $row["name"];
-    $address1 = $row["address_1"];
-    $address2 = $row["address_2"];
+    $name = $row["Name"];
+    $address1 = $row["Address_1"];
+    $address2 = $row["Address_2"];
     $city = $row["city"];
     $state = $row["state"];
     $zipcode = $row["zipcode"];
@@ -105,7 +105,15 @@ function fuelCalc($con, $gallons){
   
   <!--simple form that takes in gallons and sends it to the fuelCalc function-->
   <div class="container">
-    <form action="Fuel_Req_Form.php" method="post">
+    <form action="fuel_req.php" method="post">
+    <label for="del_Address">Address:</label>
+      <!-- input type number, which defaults to 0, and will only accept numbers -->
+      <input type="text" name="delv_Address" id="delv_Address" placeholder="Enter Address" required>
+      <br><br>
+      <label for="delv_date">Deliver Date:</label>
+      <!-- input type number, which defaults to 0, and will only accept numbers -->
+      <input type="date" id="delv_date" name="delv_date"  required>
+      <br><br>
       <label for="gallons">Gallons Requested:</label>
       <!-- input type number, which defaults to 0, and will only accept numbers -->
       <input type="number" id="gallons" name="gallons" min="0" value="0">

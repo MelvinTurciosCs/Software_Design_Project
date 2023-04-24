@@ -41,7 +41,7 @@ function pwdMatch($password, $pwdrepeat){
 
 function uidExists($con, $username){
     //the question mark prevents injections
-    $sql = "SELECT * FROM client WHERE username = ?;";
+    $sql = "SELECT * FROM usercredentials WHERE username = ?;";
     //prepared statement
     $stmt = mysqli_stmt_init($con);
     //checker to see if either fail
@@ -72,7 +72,7 @@ function uidExists($con, $username){
 
 function createUser($con, $username, $password){
     //the question mark prevents injections
-    $sql = "INSERT INTO client (username, password) VALUES (?, ?); ";
+    $sql = "INSERT INTO usercredentials (username, password) VALUES (?, ?); ";
     //prepared statement
     $stmt = mysqli_stmt_init($con);
     //checker to see if either fail
@@ -125,7 +125,7 @@ $pwdHashed = $uidExists["password"];
 $checkPwd = password_verify($password, $pwdHashed);
 
 //the sql query needed to fetch the specific row 
-$sql = "SELECT * FROM client WHERE username = ?";
+$sql = "SELECT * FROM usercredentials WHERE username = ?";
 //prepared statement
 $stmt = $con->prepare($sql);
 //binds the statement
@@ -148,7 +148,7 @@ else if($checkPwd === true){
 
     session_start();
     //Stores the client ID for the session
-    $_SESSION["useruid"] = $uidExists["client_ID"];
+    $_SESSION["useruid"] = $uidExists["id"];
     if(is_null($row['name']))
     {
         header("location: ../../profileManagement.php?");
@@ -166,30 +166,63 @@ else if($checkPwd === true){
 }
 
 // Create the function for code for updating the user profile information
-function update_Profile_Info($con, $name, $address_1, $address_2, $city, $state, $zipcode, $email, $cpm, $user_id){
-   //the question mark prevents injections
-    $sql = "UPDATE client SET name = ?, address_1 = ?, address_2 = ?, city = ?, state = ?, zipcode = ?, email = ?, cpm = ? WHERE client_ID = ?; ";
+function update_Profile_Info($con, $Name, $Address_1, $Address_2, $city, $state, $zipcode, $cpm, $user_id){
+    // prepare statement
+    $sql = "IF EXISTS(SELECT * FROM client_info WHERE client_ID = ?) THEN
+        UPDATE client_info SET Name = ?, Address_1 = ?, Address_2 = ?, city = ?, state = ?, zipcode = ?, cpm = ? WHERE client_ID = ?;
+    ELSE
+        INSERT INTO client_info (client_ID, Name, Address_1, Address_2, city, state, zipcode, cpm) VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+    END IF;";
 
-    //prepared statement
+    // prepared statement
     $stmt = mysqli_stmt_init($con);
 
-    //checker to see if either fail
-    if(!mysqli_stmt_prepare($stmt, $sql)){
+    // checker to see if either fail
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../../profileManagement.php?error=stmtfailed");
         exit();
     }
 
-    //binds statement
-    mysqli_stmt_bind_param($stmt, "sssssssss", $name, $address_1, $address_2, $city, $state, $zipcode, $email, $cpm, $user_id);
+    // bind statement
+    mysqli_stmt_bind_param($stmt, "isssssssisssssssi", $user_id, $Name, $Address_1, $Address_2, $city, $state, $zipcode, $cpm, $user_id, $user_id, $Name, $Address_1, $Address_2, $city, $state, $zipcode, $cpm);
 
-    //executes statement
+    // executes statement
     mysqli_stmt_execute($stmt);
 
-    //close statement
+    // close statement
     mysqli_stmt_close($stmt);
     header("location: ../../profileManagement.php?error=none");
-    
+
     exit();
+
+}
+
+function insert_Order($con, $Tprice, $user_id, $delv_date, $ccpm, $req_Gals, $Sugg_Price, $delv_Address)
+{
+
+    $sql = "INSERT INTO order_history (total_price, user_ID, delv_date, ccpm, request_Gals, suggested_Price, del_Address) VALUES (?, ?, ?, ?, ?, ?, ?);";
+
+    // prepared statement
+    $stmt = mysqli_stmt_init($con);
+
+    // checker to see if either fail
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../../profileManagement.php?error=stmtfailed");
+        exit();
+    }
+    
+    // bind statement
+    mysqli_stmt_bind_param($stmt, "sssssss", $Tprice, $user_id, $delv_date, $ccpm, $req_Gals, $Sugg_Price, $delv_Address);
+    
+        // executes statement
+        mysqli_stmt_execute($stmt);
+    
+        // close statement
+        mysqli_stmt_close($stmt);
+
+        header("location: ../../Fuel_Req_Form.php?error=none");
+
+        exit();
 }
 
 ?>

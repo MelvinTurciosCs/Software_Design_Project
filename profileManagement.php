@@ -12,7 +12,7 @@
     <div class="w-50 m-auto">
       <form action="includes/config/profileMan.inc.php" method="post">
           <div class="form-group">
-              <label>Company Profit Margin:</label>
+              <label>Company Profit Margin (XX%):</label>
               <input type="text" name="cpm" class="form-control">
           </div>
           <div class="form-group">
@@ -43,10 +43,6 @@
           <div class="form-group">
               <label>Zip Code:</label>
               <input type="text" name="zipcode" class="form-control">
-          </div>
-          <div class="form-group">
-              <label>Email:</label>
-              <input type="text" name="email" class="form-control">
           </div>
           <button type="submit" name = "submit" class="btn btn-success">Update Info</button>
       </form>

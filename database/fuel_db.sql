@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2023 at 01:26 AM
+-- Generation Time: Apr 03, 2023 at 01:52 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -24,30 +24,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `client`
+-- Table structure for table `client_info`
 --
 
-CREATE TABLE `client` (
-  `client_ID` int(11) NOT NULL,
-  `username` varchar(16) DEFAULT NULL,
-  `password` varchar(255) NOT NULL,
-  `name` varchar(50) DEFAULT NULL,
-  `address_1` varchar(100) DEFAULT NULL,
-  `address_2` varchar(100) DEFAULT NULL,
-  `city` varchar(100) DEFAULT NULL,
-  `state` varchar(2) DEFAULT NULL,
-  `zipcode` int(9) DEFAULT NULL,
-  `email` varchar(25) DEFAULT NULL,
-  `cpm` float DEFAULT NULL
+CREATE TABLE `client_info` (
+  `client_ID` int(100) NOT NULL,
+  `Name` varchar(20) NOT NULL,
+  `Address_1` varchar(40) NOT NULL,
+  `Address_2` varchar(40) NOT NULL,
+  `city` varchar(10) NOT NULL,
+  `state` varchar(2) NOT NULL,
+  `zipcode` int(5) NOT NULL,
+  `cpm` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `client`
---
-
-INSERT INTO `client` (`client_ID`, `username`, `password`, `name`, `address_1`, `address_2`, `city`, `state`, `zipcode`, `email`, `cpm`) VALUES
-(0, 'alice123', '11111111', 'alice volto', '123 apple drive', '124 pineapple drive', 'Houston', 'TX', 77000, 'alice54@yahoo.com', 10),
-(8, 'hello', '$2y$10$VynujjA/jU9.KHxyH4mKwOBpFF5e/GNV6lDMm0p1NoEefXN0wh97O', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -66,21 +55,26 @@ CREATE TABLE `order_history` (
   `del_Address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `order_history`
+-- Table structure for table `usercredentials`
 --
 
-INSERT INTO `order_history` (`order_ID`, `total_price`, `user_ID`, `delv_date`, `ccpm`, `request_Gals`, `suggested_Price`, `del_Address`) VALUES
-(1, 20022, 8, '2023-04-12', 40, 100, 20, '123 apple st');
+CREATE TABLE `usercredentials` (
+  `id` int(11) NOT NULL,
+  `username` varchar(10) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `client`
+-- Indexes for table `client_info`
 --
-ALTER TABLE `client`
+ALTER TABLE `client_info`
   ADD PRIMARY KEY (`client_ID`);
 
 --
@@ -91,14 +85,20 @@ ALTER TABLE `order_history`
   ADD KEY `user_ID` (`user_ID`);
 
 --
+-- Indexes for table `usercredentials`
+--
+ALTER TABLE `usercredentials`
+  ADD PRIMARY KEY (`id`,`username`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `client`
+-- AUTO_INCREMENT for table `client_info`
 --
-ALTER TABLE `client`
-  MODIFY `client_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE `client_info`
+  MODIFY `client_ID` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `order_history`
@@ -107,16 +107,76 @@ ALTER TABLE `order_history`
   MODIFY `order_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `usercredentials`
+--
+ALTER TABLE `usercredentials`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `client_info`
+--
+ALTER TABLE `client_info`
+  ADD CONSTRAINT `client_ID` FOREIGN KEY (`client_ID`) REFERENCES `usercredentials` (`id`);
 
 --
 -- Constraints for table `order_history`
 --
 ALTER TABLE `order_history`
-  ADD CONSTRAINT `user_ID` FOREIGN KEY (`user_ID`) REFERENCES `client` (`client_ID`);
+  ADD CONSTRAINT `user_ID` FOREIGN KEY (`user_ID`) REFERENCES `usercredentials` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+/* Dummy user credentials variables for testing. Each user has credentials username: user#, password: password# */;
+INSERT INTO usercredentials (username, password) VALUES 
+('user1', '$2y$10$ZDlRZ0tjZlVkRVpOeHNoHuJjAr1yO7VrDUMzrQX9ECksvJZo7LwE2'),
+('user2', '$2y$10$TlhzsR1ylsXcUowvP8JzWuE05mJxlraxgGpI8izydfEMaCn3qIHui'),
+('user3', '$2y$10$Gt4x4t4ycNtBCxE74.AA5OmS9X9tSwC1zYI/ymdcpC4tGk4tF88yK'),
+('user4', '$2y$10$g1DZ5Yzkgk1Rjlnxg.n/iO46g8al0lWIz0q3dXOZzvQZ1GSmwCFqq'),
+('user5', '$2y$10$qTb.rubRKPes9XowhDRvYOhWIMwHClpF10V7e/1v8kV7Ddyr54Gmi'),
+('user6', '$2y$10$T3w6P3U6MFbT28KjjQs1IOi9XsfglPmtz0nxK8pObluV7FupM1jK6'),
+('user7', '$2y$10$KjveuWZzYIJ/PRd4TP4tFus61tW5y/15Zn46HBC.YRFLhWeQ2Qc/i'),
+('user8', '$2y$10$eTFeKjZ23wCZQ7VUug89C.YrrmkE9Kx6yHeO/KKcYfznn7iL0M1Oa'),
+('user9', '$2y$10$iXOxQ2R.PtW5Iv2N1hLZwuf4p77e0q1gKdha5TKH0tS8.56tjKQvG'),
+('user10', '$2y$10$GW5qjM5X5qrnSbCK8jAEG.12vRYvvZn1zZlKjWfDzAtvLjfX9xGou');
+
+
+/* Dummy client info variables for testing. Each client has a unique ID, name, address, city, state, zipcode, and cpm */;
+INSERT INTO client_info (client_ID, Name, Address_1, Address_2, city, state, zipcode, cpm) VALUES
+(1, 'John Smith', '123 Main St', '', 'Austin', 'TX', 78701, 50),
+(2, 'Jane Doe', '456 Elm St', '', 'Houston', 'TX', 77002, 75),
+(3, 'Bob Johnson', '789 Oak St', '', 'Dallas', 'CA', 90001, 30),
+(4, 'Emily Davis', '246 Walnut St', '', 'San Antonio', 'TX', 78201, 60),
+(5, 'Mark Wilson', '369 Pine St', '', 'Fort Worth', 'NY', 10001, 40),
+(6, 'Samantha Lee', '753 Maple St', '', 'Plano', 'TX', 75023, 80),
+(7, 'David Kim', '159 Birch St', '', 'Irving', 'CA', 90002, 10),
+(8, 'Melissa Brown', '852 Cedar St', '', 'El Paso', 'TX', 79901, 20),
+(9, 'Thomas Martin', '369 Oakwood St', '', 'Arlington', 'IL', 60004, 90),
+(10, 'Jennifer Jones', '7536 Elmwood St', '', 'Austin', 'TX', 78745, 55);
+
+
+/* Dummy orders for testing. Each user has ~2 orders. */
+INSERT INTO order_history (total_price, user_ID, delv_date, ccpm, request_Gals, suggested_Price, del_Address) VALUES
+(150.25, 2, '2023-03-02', 0.1, 136.59, 150.25, '456 Elm St, Houston, TX'),
+(225.75, 4, '2023-03-05', 0.2, 187.28, 225.75, '246 Walnut St, San Antonio, TX'),
+(275.00, 6, '2023-03-07', 0.3, 177.91, 275.00, '753 Maple St, Plano, TX'),
+(320.50, 8, '2023-03-11', 0.1, 291.36, 320.50, '852 Cedar St, El Paso, TX'),
+(185.75, 3, '2023-03-14', 0.2, 154.79, 185.75, '789 Oak St, Dallas, CA'),
+(275.25, 7, '2023-03-18', 0.3, 177.92, 275.25, '159 Birch St, Irving, CA'),
+(335.50, 9, '2023-03-20', 0.1, 305.54, 335.50, '369 Oakwood St, Arlington, IL'),
+(150.50, 1, '2023-03-24', 0.2, 125.41, 150.50, '123 Main St, Austin, TX'),
+(210.75, 5, '2023-03-26', 0.1, 191.59, 210.75, '369 Pine St, Fort Worth, NY'),
+(290.25, 10, '2023-03-28', 0.3, 186.26, 290.25, '7536 Elmwood St, Austin, TX'),
+(145.25, 2, '2023-03-02', 0.1, 132.05, 145.25, '456 Elm St, Houston, TX'),
+(235.75, 4, '2023-03-05', 0.2, 196.46, 235.75, '246 Walnut St, San Antonio, TX'),
+(265.00, 6, '2023-03-07', 0.3, 170.29, 265.00, '753 Maple St, Plano, TX'),
+(340.50, 8, '2023-03-11', 0.1, 309.91, 340.50, '852 Cedar St, El Paso, TX'),
+(195.75, 3, '2023-03-14', 0.2, 162.57, 195.75, '789 Oak St, Dallas, CA'),
+(285.25, 7, '2023-03-18', 0.3, 183.94, 285.25, '159 Birch St, Irving, CA'),
+(345.50, 9, '2023-03-20', 0.1, 314.09, 345.50, '369 Oakwood St, Arlington, IL');

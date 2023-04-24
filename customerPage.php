@@ -8,7 +8,7 @@ include('includes/header.php');
 
     //Holds the clients info
       //the sql query needed to fetch the specific row 
-      $sql = "SELECT name, address_1, address_2, city, state, zipcode FROM client WHERE client_ID = ?";
+      $sql = "SELECT name, address_1, address_2, city, state, zipcode FROM client_info WHERE client_ID = ?";
       //prepared statement
       $stmt = $con->prepare($sql);
       //binds the statement
@@ -51,9 +51,8 @@ include('includes/header.php');
               <label>Zip Code:</label>
              <p><?php echo $row['zipcode']?></p> 
         </div>
-
     </form>
-
+        
 
 
 
