@@ -36,12 +36,6 @@
         <p>Image 2</p>
       </div>
     </div>
-    <div class="image_div_child">
-      <img src="images/3.jpg" alt="image3" style="width:100%; height:100%;">
-      <div class="image_div_child_text">
-        <p>Image 3</p>
-      </div>
-    </div>
   </div>
 
   <!-- Contact Us and Google Image in background-->
