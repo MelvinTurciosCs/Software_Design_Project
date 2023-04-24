@@ -25,15 +25,8 @@
   <!-- Images with descriptions -->
   <div class="image_div">
     <div class="image_div_child">
-      <img href="https://www.flaticon.com/free-icons/oil-tank" title="oil tank icons" alt="image1" style="width:75px; height:75px">
+      <img src="images/Get the Best Fuel Quote in Town.png" title="Tanker Truck" alt="image1" style="width: 100%; height: 400px">
       <div class="image_div_child_text">
-        <p>Image 1</p>
-      </div>
-    </div>
-    <div class="image_div_child">
-      <img src="images/2.jpg" alt="image2" style="width:75px; height:75px">
-      <div class="image_div_child_text">
-        <p>Image 2</p>
       </div>
     </div>
   </div>
