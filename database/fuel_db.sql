@@ -144,7 +144,8 @@ INSERT INTO usercredentials (username, password) VALUES
 ('user7', '$2y$10$KjveuWZzYIJ/PRd4TP4tFus61tW5y/15Zn46HBC.YRFLhWeQ2Qc/i'),
 ('user8', '$2y$10$eTFeKjZ23wCZQ7VUug89C.YrrmkE9Kx6yHeO/KKcYfznn7iL0M1Oa'),
 ('user9', '$2y$10$iXOxQ2R.PtW5Iv2N1hLZwuf4p77e0q1gKdha5TKH0tS8.56tjKQvG'),
-('user10', '$2y$10$GW5qjM5X5qrnSbCK8jAEG.12vRYvvZn1zZlKjWfDzAtvLjfX9xGou');
+('user10', '$2y$10$GW5qjM5X5qrnSbCK8jAEG.12vRYvvZn1zZlKjWfDzAtvLjfX9xGou'),
+('password', '$2y$10$YFfoE.iwX34JFQ34c0quG.38.8MQqvp21XfqvH5Z0Doag2IvmvJIy');
 
 
 /* Dummy client info variables for testing. Each client has a unique ID, name, address, city, state, zipcode, and cpm */;
@@ -158,7 +159,8 @@ INSERT INTO client_info (client_ID, Name, Address_1, Address_2, city, state, zip
 (7, 'David Kim', '159 Birch St', '', 'Irving', 'CA', 90002, 10),
 (8, 'Melissa Brown', '852 Cedar St', '', 'El Paso', 'TX', 79901, 20),
 (9, 'Thomas Martin', '369 Oakwood St', '', 'Arlington', 'IL', 60004, 90),
-(10, 'Jennifer Jones', '7536 Elmwood St', '', 'Austin', 'TX', 78745, 55);
+(10, 'Jennifer Jones', '7536 Elmwood St', '', 'Austin', 'TX', 78745, 55),
+(11, 'Pass Word', '123 Password St', '193 Wordpass St', 'Houston', 'TX', 77235, 20);
 
 
 /* Dummy orders for testing. Each user has ~2 orders. */
@@ -179,4 +181,12 @@ INSERT INTO order_history (total_price, user_ID, delv_date, ccpm, request_Gals, 
 (340.50, 8, '2023-03-11', 0.1, 309.91, 340.50, '852 Cedar St, El Paso, TX'),
 (195.75, 3, '2023-03-14', 0.2, 162.57, 195.75, '789 Oak St, Dallas, CA'),
 (285.25, 7, '2023-03-18', 0.3, 183.94, 285.25, '159 Birch St, Irving, CA'),
-(345.50, 9, '2023-03-20', 0.1, 314.09, 345.50, '369 Oakwood St, Arlington, IL');
+(345.50, 9, '2023-03-20', 0.1, 314.09, 345.50, '369 Oakwood St, Arlington, IL'),
+(345.50, 11, '2023-03-15', 0.1, 300.09, 330.09, '193 Wordpass St', 'Houston', 'TX'),
+(285.25, 11, '2023-03-16', 0.3, 183.94, 285.25, '193 Password St', 'Houston', 'TX'),
+(145.25, 11, '2023-03-17', 0.1, 132.05, 145.25, '193 Wordpass St', 'Houston', 'TX'),
+(235.75, 11, '2023-03-19', 0.2, 196.46, 235.75, '193 Password St', 'Houston', 'TX'),
+(275.00, 11, '2023-03-20', 0.3, 177.91, 275.00, '193 Wordpass St', 'Houston', 'TX'),
+(320.50, 11, '2023-03-21', 0.1, 291.36, 320.50, '193 Password St', 'Houston', 'TX'),
+(275.25, 11, '2023-03-22', 0.3, 177.92, 275.25, '193 Wordpass St', 'Houston', 'TX'),
+(340.50, 11, '2023-03-23', 0.1, 309.91, 340.50, '193 Password St', 'Houston', 'TX');
