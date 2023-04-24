@@ -29,7 +29,7 @@
   <div class="image_div">
   <div class="image_div_child">
     <img src="./images/tanker.png" title="oil tank icons" alt="image1">
-    <p>When it comes to transporting fuel, safety is always a top priority. That's why we're proud to offer the safest fuel transportation available. Our team of experienced professionals takes every precaution to ensure that your fuel is transported securely and without incident. From carefully loading the fuel onto our tankers to following strict safety protocols on the road, we leave nothing to chance. We understand that accidents can happen, but with our commitment to safety, you can rest easy knowing that your fuel is in good hands.</p>
+    <p>img.</p>
   </div>
   <div class="image_div_child">
     <img src="./images/fossil-fuel.png" alt="image2">
@@ -58,7 +58,6 @@
 
 .image_div_child p {
   margin: 0;
-  width: 30%;
   padding-top: 5px;
   padding: 10px;
   font-size: 12px;
