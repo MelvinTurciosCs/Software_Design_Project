@@ -52,7 +52,7 @@
 }
 
 .image_div_child img {
-  width: 300;
+  width: 300px;
   height: 300px;
 }
 
