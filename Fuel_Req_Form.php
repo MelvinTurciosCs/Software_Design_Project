@@ -115,13 +115,13 @@ function fuelCalc($con, $gallons){
       <br><br>
       <label for="delv_date">Deliver Date:</label>
       <!-- input type number, which defaults to 0, and will only accept numbers -->
-      <input type="date" id="delv_date" name="delv_date" value='2000-01-01' required>
+      <input type="date" id="delv_date" name="delv_date" value='2023-01-01' required>
       <br><br>
       <label for="gallons">Gallons Requested:</label>
       <!-- input type number, which defaults to 0, and will only accept numbers -->
       <input type="number" id="gallons" name="gallons" min="0" value="0">
       <br><br>
-      <input type="submit" value="Check Suggested Price">
+      <input type="submit" value="Check Price">
       <!--confirm button to send to database-->
 
       <form action="fuel_req.php" method="post">
