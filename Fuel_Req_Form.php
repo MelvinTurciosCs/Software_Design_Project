@@ -121,7 +121,7 @@ function fuelCalc($con, $gallons){
       <!-- input type number, which defaults to 0, and will only accept numbers -->
       <input type="number" id="gallons" name="gallons" min="0" value="0">
       <br><br>
-      <input type="submit" value="Submit">
+      <input type="submit" value="Check Suggested Price">
       <!--confirm button to send to database-->
 
       <form action="fuel_req.php" method="post">
