@@ -21,11 +21,11 @@ include('includes/header.php');
       $row = $result->fetch_assoc();
 ?>
 
-<div class="customer_box">
+<div class="customer_box" >
     <h1 style="text-align: center">Customer Portal</h1>
 
     
-    <form action="">
+    <form action="" class = 'profile_Form'>
           <div class="form-group">
               <label>Full Name:</label>
               <p><?php echo $row['name']?></p>
