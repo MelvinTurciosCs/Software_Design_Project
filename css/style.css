@@ -354,6 +354,16 @@
   }
 
   /* This is the css styling for the Profile Management Page */
+  .profile_Form {
+    width: 35rem;
+    margin: auto;
+    color: #e8e5d2;
+    background-color: #E1856C;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+  }
+
+  /* This is the css styling for the Profile Management Page */
   .profileManForm {
     width: 35rem;
     margin: auto;
